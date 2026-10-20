@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bfhd1dkenrh8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkcm1"]
+albedo_color = Color(0.46192533, 0.25933167, 0.2054703, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p65gs"]
+material = SubResource("StandardMaterial3D_jkcm1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kfde5"]
+albedo_color = Color(0.27344868, 0.21147847, 0.011573761, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ftg3k"]
+material = SubResource("StandardMaterial3D_kfde5")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jkcm1"]
+height = 0.7438965
+radius = 0.4794922
+
+[node name="Node3D" type="StaticBody3D" unique_id=1608725029]
+collision_layer = 16
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1901236647]
+transform = Transform3D(0.9541287, 0, 0, 0, 0.37828463, 0, 0, 0, 0.9541287, 0, -0.13293777, 0)
+mesh = SubResource("CylinderMesh_p65gs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1033006256]
+transform = Transform3D(0.80458283, 0, 0, 0, 0.027822422, 0, 0, 0, 0.80458283, 0, 0.26567644, 0)
+mesh = SubResource("CylinderMesh_ftg3k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1573027783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13122559, 0)
+shape = SubResource("CylinderShape3D_jkcm1")

@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://bcfknludjxigv"]
+
+[ext_resource type="PackedScene" uid="uid://brik357qimexd" path="res://Imports/Pod/podx2.glb" id="1_bakcy"]
+[ext_resource type="Material" uid="uid://c8xlaixjl3o12" path="res://materials/drvene_ploce/drvene_ploce.tres" id="2_8dnoh"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c6o4v"]
+_surfaces = [{
+"aabb": AABB(-0.7, 0, -0.1, 1.4, 1.4, 0.2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0a5j3"]
+resource_name = "podx2_Cube_067"
+_surfaces = [{
+"aabb": AABB(-0.7, 0, -0.1, 1.4, 1.4, 0.2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": ExtResource("2_8dnoh"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_c6o4v")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8dnoh"]
+size = Vector3(1.4, 0.2, 2.8)
+
+[node name="podx22" unique_id=2075684192 instance=ExtResource("1_bakcy")]
+collision_mask = 0
+
+[node name="podx2" parent="." index="0" unique_id=619613291]
+mesh = SubResource("ArrayMesh_0a5j3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1814965242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 2.9802322e-08, 1.4)
+shape = SubResource("BoxShape3D_8dnoh")

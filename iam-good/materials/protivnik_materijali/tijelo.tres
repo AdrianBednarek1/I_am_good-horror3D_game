@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ddrqr4sj78t5m"]
+
+[ext_resource type="Texture2D" uid="uid://cx35kbcf5ljfx" path="res://teksture/protivnik_teksture/ScaryGirlBody_Body_BaseColor.png" id="1_0rqvw"]
+[ext_resource type="Texture2D" uid="uid://cia33tavx5qc2" path="res://teksture/protivnik_teksture/ScaryGirlBody_Body_Metallic.png" id="2_8j1e7"]
+[ext_resource type="Texture2D" uid="uid://dnyvbey6emu5p" path="res://teksture/protivnik_teksture/ScaryGirlBody_Body_Normal.png" id="3_lilci"]
+[ext_resource type="Texture2D" uid="uid://b13wdiv4bgdl" path="res://teksture/protivnik_teksture/ScaryGirlBody_Body_Reflection.png" id="4_15508"]
+[ext_resource type="Texture2D" uid="uid://c6icvnw74nxu5" path="res://teksture/protivnik_teksture/ScaryGirlBody_Body_Roughness.png" id="5_afwl7"]
+
+[resource]
+albedo_texture = ExtResource("1_0rqvw")
+metallic = 1.0
+metallic_texture = ExtResource("2_8j1e7")
+roughness_texture = ExtResource("5_afwl7")
+normal_enabled = true
+normal_texture = ExtResource("3_lilci")
+refraction_enabled = true
+refraction_texture = ExtResource("4_15508")

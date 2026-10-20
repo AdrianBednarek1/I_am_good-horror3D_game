@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://hdrrsghccfgc"]
+
+[ext_resource type="Script" uid="uid://bl7l7twoenpdf" path="res://scripts/teleport.gd" id="1_w4hbs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mom7o"]
+shading_mode = 0
+albedo_color = Color(0.27179256, 4.9695e-05, 0.2717905, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mom7o"]
+material = SubResource("StandardMaterial3D_mom7o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mom7o"]
+size = Vector3(1.2850878, 1.8663101, 0.14149511)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4hbs"]
+shading_mode = 0
+albedo_color = Color(0.7647059, 0.21568628, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2ayim"]
+material = SubResource("StandardMaterial3D_w4hbs")
+
+[node name="Teleport" type="Area3D" unique_id=420435269]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_w4hbs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1161434694]
+transform = Transform3D(-1.317091, 0, -0.0008731526, 0, 1.8896446, 0, 0.0138849765, 0, -0.082824856, 0, 0, 0)
+mesh = SubResource("BoxMesh_mom7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1415969245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041223764, -0.00017929077, -0.0052856207)
+shape = SubResource("BoxShape3D_mom7o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1212486591]
+transform = Transform3D(1.4774845, 0, 0, 0, 1.9906206, 0, 0, 0, -0.039025784, 0, 0.055659294, 0)
+mesh = SubResource("BoxMesh_2ayim")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

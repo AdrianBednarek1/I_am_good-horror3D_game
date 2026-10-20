@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://3qj5mn5n41jx"]
+
+[ext_resource type="Texture2D" uid="uid://bdth8tev3molj" path="res://teksture/protivnik_teksture/ScaryGirlBody_Eyes_BaseColor.png" id="1_hmn4w"]
+[ext_resource type="Texture2D" uid="uid://st0dsolm4cul" path="res://teksture/protivnik_teksture/ScaryGirlBody_Eyes_Emissive.png" id="2_s10lg"]
+[ext_resource type="Texture2D" uid="uid://w0hnl0aiym5v" path="res://teksture/protivnik_teksture/ScaryGirlBody_Eyes_OcclusionRoughnessMetal.png" id="3_mq0us"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_hmn4w")
+roughness_texture = ExtResource("3_mq0us")
+emission_enabled = true
+emission_texture = ExtResource("2_s10lg")

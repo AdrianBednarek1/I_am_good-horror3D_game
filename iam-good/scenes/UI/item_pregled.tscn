@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dyvvgu60p5nb"]
+
+[ext_resource type="Script" uid="uid://ltcmdvcapf4a" path="res://scripts/Item_pregled_UI.gd" id="1_s81ix"]
+
+[node name="item_pregled" type="Control" unique_id=196900236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_s81ix")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=738766789]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -566.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.52156866)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=224597962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=229909549]
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1438973009]
+custom_minimum_size = Vector2(100, 500)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1363285851]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+autowrap_mode = 2

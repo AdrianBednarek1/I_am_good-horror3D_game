@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bjkx8yngxqhtx"]
+
+[ext_resource type="Script" uid="uid://dacs3lsli5g3i" path="res://scripts/Papir_objekt.gd" id="1_lh6uk"]
+[ext_resource type="Script" uid="uid://2y2b5c0tst2d" path="res://scripts/Papir_resurs.gd" id="2_2gvqj"]
+[ext_resource type="Texture2D" uid="uid://c07owfmwj6xv" path="res://teksture/slike_tekstura/papir1.png" id="3_xpnqi"]
+
+[sub_resource type="Resource" id="Resource_uu7eg"]
+resource_local_to_scene = true
+script = ExtResource("2_2gvqj")
+tekst = "opis"
+Name = "Papir"
+Item_Image = ExtResource("3_xpnqi")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="QuadMesh" id="QuadMesh_0j2m6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0j2m6"]
+size = Vector3(1.0400391, 1.0412598, 0.029052734)
+
+[node name="papir" type="Area3D" unique_id=108936457]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_lh6uk")
+podaci_itema = SubResource("Resource_uu7eg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=265724637]
+transform = Transform3D(0.99997824, -0.006006255, 0.002720909, 0.0060104476, 0.9999807, -0.0015343031, -0.0027116335, 0.0015506368, 0.9999951, 0, 0, 0)
+mesh = SubResource("QuadMesh_0j2m6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1654546005]
+shape = SubResource("BoxShape3D_0j2m6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=942907343]
+bus = &"efekti_zvuka"

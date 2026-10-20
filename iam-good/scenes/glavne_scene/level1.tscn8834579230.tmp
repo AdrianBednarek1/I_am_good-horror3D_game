@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://bvbwviyigatjy"]
+
+[ext_resource type="Script" uid="uid://brjsnjtov2r43" path="res://scripts/Main.gd" id="1_giv8n"]
+[ext_resource type="PackedScene" uid="uid://dd8bfm0rlyacn" path="res://scenes/mape/mapa1.tscn" id="1_xyqoq"]
+[ext_resource type="PackedScene" uid="uid://bnbo0m56a0ovw" path="res://scenes/UI/inventar.tscn" id="2_2t1pn"]
+[ext_resource type="PackedScene" uid="uid://dyvvgu60p5nb" path="res://scenes/UI/item_pregled.tscn" id="3_5kgfy"]
+[ext_resource type="PackedScene" uid="uid://dii3nks078b2y" path="res://scenes/UI/obavjest.tscn" id="4_2tvko"]
+[ext_resource type="PackedScene" uid="uid://cmd1rkghdx5fp" path="res://scenes/UI/pin_ui.tscn" id="5_ww6q4"]
+[ext_resource type="PackedScene" uid="uid://l6rartr6w74d" path="res://scenes/UI/slika_jump_scare_ui.tscn" id="6_giv8n"]
+[ext_resource type="PackedScene" uid="uid://ciqser68qvbvt" path="res://scenes/UI/upravitelj_ui.tscn" id="7_qcx86"]
+[ext_resource type="PackedScene" uid="uid://20llp3qg30fy" path="res://scenes/protivnik/protivnik.tscn" id="8_5kgfy"]
+[ext_resource type="PackedScene" uid="uid://c5p5dnv7t25ma" path="res://scenes/igrac/player.tscn" id="9_2tvko"]
+[ext_resource type="PackedScene" uid="uid://ddwp6u4q2binj" path="res://scenes/ostalo/upravitelj.tscn" id="11_qcx86"]
+[ext_resource type="PackedScene" uid="uid://cope47o4eoqd4" path="res://scenes/interaktivni_objekti/vrata/okvir_vrata.tscn" id="12_qcx86"]
+[ext_resource type="PackedScene" uid="uid://c38l567d4j0oy" path="res://scenes/interaktivni_objekti/Ormar/ormar.tscn" id="13_h4dif"]
+[ext_resource type="PackedScene" uid="uid://hdrrsghccfgc" path="res://scenes/ostalo/teleport.tscn" id="14_fj6qn"]
+[ext_resource type="PackedScene" uid="uid://cf25nogsophx7" path="res://scenes/interaktivne_stvari/oko.tscn" id="15_ph7sp"]
+[ext_resource type="PackedScene" uid="uid://bjkx8yngxqhtx" path="res://scenes/interaktivne_stvari/papir.tscn" id="16_6b1m8"]
+[ext_resource type="Texture2D" uid="uid://dkplgtrctmyay" path="res://teksture/oko.png" id="16_k81ct"]
+[ext_resource type="Texture2D" uid="uid://dp44bh211dx4j" path="res://teksture/slika4.png" id="17_1q2no"]
+[ext_resource type="Script" uid="uid://2y2b5c0tst2d" path="res://scripts/Papir_resurs.gd" id="17_4er15"]
+[ext_resource type="Script" uid="uid://dtsvbngq2yoxt" path="res://scripts/Oko_resurs.gd" id="17_hnwlp"]
+[ext_resource type="Texture2D" uid="uid://c07owfmwj6xv" path="res://teksture/papir1.png" id="19_5wdv8"]
+[ext_resource type="PackedScene" uid="uid://tyio1higlyqe" path="res://scenes/interaktivni_objekti/sef/Sef.tscn" id="20_5wdv8"]
+[ext_resource type="Texture2D" uid="uid://b3pblmmomb3oc" path="res://teksture/slika1.png" id="22_ujp53"]
+[ext_resource type="Script" uid="uid://dggmeyufle46n" path="res://scripts/slika.gd" id="23_hnwlp"]
+[ext_resource type="Texture2D" uid="uid://b46uvtttlicqy" path="res://teksture/slika2.png" id="23_k81ct"]
+[ext_resource type="Material" uid="uid://s4yml1idtswd" path="res://materials/drvo/drvo.tres" id="26_de46i"]
+
+[sub_resource type="Resource" id="Resource_82htp"]
+script = ExtResource("17_4er15")
+tekst = "vidim te"
+Name = "papir1"
+Item_Image = ExtResource("17_1q2no")
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_4er15"]
+script = ExtResource("17_4er15")
+tekst = "gdje si?"
+Name = "papir2"
+Item_Image = ExtResource("19_5wdv8")
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_tsvgg"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="BoxMesh" id="BoxMesh_wfm7v"]
+material = ExtResource("26_de46i")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8qyv"]
+size = Vector3(1.5170898, 1.8620453, 0.036865234)
+
+[sub_resource type="QuadMesh" id="QuadMesh_qgff0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfm7v"]
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture_force_srgb = true
+
+[sub_resource type="Resource" id="Resource_mrq3p"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_5qfq6"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_jhnjj"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_i172u"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[node name="Level1" type="Node3D" unique_id=481630314 node_paths=PackedStringArray("player", "upravitelj_ui", "protivnik", "upravitelj", "mapa")]
+script = ExtResource("1_giv8n")
+player = NodePath("player")
+upravitelj_ui = NodePath("CanvasLayer/upravitelj_UI")
+protivnik = NodePath("protivnik")
+upravitelj = NodePath("upravitelj")
+mapa = NodePath("Mapa")
+
+[node name="Mapa" parent="." unique_id=1739097980 instance=ExtResource("1_xyqoq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1094201046]
+
+[node name="inventar" parent="CanvasLayer" unique_id=1857082203 instance=ExtResource("2_2t1pn")]
+
+[node name="item_pregled" parent="CanvasLayer" unique_id=196900236 instance=ExtResource("3_5kgfy")]
+
+[node name="obavjest" parent="CanvasLayer" unique_id=1012999208 instance=ExtResource("4_2tvko")]
+
+[node name="pin_UI" parent="CanvasLayer" unique_id=894656522 instance=ExtResource("5_ww6q4")]
+
+[node name="slika_jump_scare_ui" parent="CanvasLayer" unique_id=1204197071 instance=ExtResource("6_giv8n")]
+
+[node name="upravitelj_UI" parent="CanvasLayer" unique_id=1141750365 instance=ExtResource("7_qcx86")]
+
+[node name="protivnik" parent="." unique_id=1500677230 instance=ExtResource("8_5kgfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.483165, 1.0201254, -9.714067)
+
+[node name="player" parent="." unique_id=1858155381 instance=ExtResource("9_2tvko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4710555, 5.30398, -1.5203003)
+
+[node name="upravitelj" parent="." unique_id=9100332 node_paths=PackedStringArray("igrac", "protivnik") instance=ExtResource("11_qcx86")]
+igrac = NodePath("../player")
+protivnik = NodePath("../protivnik")
+
+[node name="okvir_vrata" parent="." unique_id=642080143 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9, 3.2, -2.2)
+
+[node name="okvir_vrata2" parent="." unique_id=836642401 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.8, 3.2, -5.7000003)
+
+[node name="okvir_vrata3" parent="." unique_id=560545876 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.1, 3.2, -14.8)
+
+[node name="okvir_vrata4" parent="." unique_id=67087538 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.3, 0, -6.4)
+
+[node name="okvir_vrata5" parent="." unique_id=206077165 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.500001, 0, -6.5)
+
+[node name="ormar" parent="." unique_id=136312617 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.75, 0, 8.742277e-08, 0, 0.7, 0, -6.556708e-08, 0, -0.99999994, 2.3000002, 4.6, -16.6)
+
+[node name="ormar2" parent="." unique_id=1809281824 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-3.278353e-08, 0, -0.9999999, 0, 0.7, 0, 0.74999994, 0, -4.371138e-08, -20, 4.6, -5.000001)
+
+[node name="Area3D" parent="ormar2" index="5" unique_id=79605959]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Teleport" parent="." unique_id=420435269 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6000004, 4.1000004, -6.700001)
+drugi_teleport = NodePath("../Teleport2")
+
+[node name="Teleport2" parent="." unique_id=1155825777 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2999996, 1.2000005, -5.000001)
+drugi_teleport = NodePath("../Teleport")
+
+[node name="papir" parent="." unique_id=108936457 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-3.059797e-08, 0, 1, 0, 0.8, 0, -0.7, 0, -4.371139e-08, -8.799999, 4.5, -9.8)
+podaci_itema = SubResource("Resource_82htp")
+
+[node name="papir2" parent="." unique_id=1990833629 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-0.7, 0, -8.742278e-08, 0, 0.8, 0, 6.119594e-08, 0, -1, -5.999999, 4.5, -6)
+podaci_itema = SubResource("Resource_4er15")
+
+[node name="Sef" parent="." unique_id=1395135218 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.1000004, 4.2000003, -10.900001)
+pin = "1234"
+
+[node name="Oko9" parent="." unique_id=2093751175 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.1000004, 4.2000003, -10.700001)
+podaci_itema = SubResource("Resource_tsvgg")
+
+[node name="Node3D" type="StaticBody3D" parent="." unique_id=1315986886]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.1000004, 4.7000003, -2.6000001)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("23_hnwlp")
+trenutna_slika = ExtResource("22_ujp53")
+iduca_slika = ExtResource("23_k81ct")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1583382912]
+transform = Transform3D(1.5461001, 0, 0, 0, 1.8701893, 0, 0, 0, 0.043465078, 0, 0, 0)
+mesh = SubResource("BoxMesh_wfm7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D" unique_id=621239484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031738281, 0.00075531006, -0.0013427734)
+shape = SubResource("BoxShape3D_u8qyv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=1821772398]
+transform = Transform3D(-1.4081962, 0, -8.742277e-08, 0, 1.7514875, 0, 1.2310842e-07, 0, -0.99999994, -0.003988743, 0.008016527, -0.023376226)
+mesh = SubResource("QuadMesh_qgff0")
+surface_material_override/0 = SubResource("StandardMaterial3D_wfm7v")
+
+[node name="Oko" parent="." unique_id=1700740496 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.000002, 4.7000003, -10.3)
+podaci_itema = SubResource("Resource_mrq3p")
+
+[node name="Oko3" parent="." unique_id=1882702791 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.800001, 4.7000003, -10.7)
+podaci_itema = SubResource("Resource_5qfq6")
+
+[node name="Oko4" parent="." unique_id=1862887301 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.400002, 4.7000003, -10.7)
+podaci_itema = SubResource("Resource_jhnjj")
+
+[node name="Oko2" parent="." unique_id=848065773 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1, 4.6, -8.3)
+podaci_itema = SubResource("Resource_i172u")
+
+[editable path="ormar2"]

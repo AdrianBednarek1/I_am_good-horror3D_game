@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b4yk7g2gwfw33"]
+
+[ext_resource type="Script" uid="uid://1a3cnelseww5" path="res://scripts/pokreni_animaciju.gd" id="1_yr3bq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d8dgv"]
+size = Vector3(2.3, 2, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr3bq"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.33800003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yr3bq"]
+material = SubResource("StandardMaterial3D_yr3bq")
+
+[node name="PokreniAnimaciju" type="Area3D" unique_id=1099428432]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_yr3bq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741856910]
+shape = SubResource("BoxShape3D_d8dgv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=473389088]
+transform = Transform3D(2.3039815, 0, 0, 0, 2.0037227, 0, 0, 0, 1.5617757, 0, 0.011935413, 0)
+mesh = SubResource("BoxMesh_yr3bq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

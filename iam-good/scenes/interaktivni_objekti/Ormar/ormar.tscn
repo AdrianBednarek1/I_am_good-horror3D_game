@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://c38l567d4j0oy"]
+
+[ext_resource type="Script" uid="uid://omlxfni3foae" path="res://scripts/ormar.gd" id="1_mq54w"]
+[ext_resource type="Material" uid="uid://b1auga7kf8djc" path="res://materials/drvo/drvo_svjetla.tres" id="2_f4aey"]
+[ext_resource type="PackedScene" uid="uid://d1rjc77kd7yha" path="res://scenes/interaktivni_objekti/Ormar/desna_vrata_ormar.tscn" id="2_mq54w"]
+[ext_resource type="PackedScene" uid="uid://du7x5fh5r2ioh" path="res://scenes/interaktivni_objekti/Ormar/lijeva_vrata_ormar.tscn" id="3_mq54w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1enoo"]
+material = ExtResource("2_f4aey")
+
+[sub_resource type="Animation" id="Animation_ygmrj"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vrata/lijeva_vrata_ormar:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vrata/desna_vrata_ormar:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p1vbe"]
+resource_name = "game_over"
+length = 2.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vrata/lijeva_vrata_ormar:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.1333334, 2.2666667, 2.4333334, 2.6, 2.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.41373026, 0), Vector3(0, -0.5427101, 0), Vector3(0, -0.82163113, 0), Vector3(0, -1.1592302, 0), Vector3(0, -2.6189363, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vrata/desna_vrata_ormar:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.1000001, 2.2666667, 2.4333334, 2.6, 2.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.47973868, 0), Vector3(0, 0.8576548, 0), Vector3(0, 0.6151414, 0), Vector3(0, 1.1487583, 0), Vector3(0, 2.4708452, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mq54w"]
+resource_name = "otvori"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vrata/lijeva_vrata_ormar:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.6179938, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vrata/desna_vrata_ormar:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.5291393, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f4aey"]
+resource_name = "zatvori"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("vrata/lijeva_vrata_ormar:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2.6179938, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("vrata/desna_vrata_ormar:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.5291393, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c6485"]
+_data = {
+&"RESET": SubResource("Animation_ygmrj"),
+&"game_over": SubResource("Animation_p1vbe"),
+&"otvori": SubResource("Animation_mq54w"),
+&"zatvori": SubResource("Animation_f4aey")
+}
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f4aey"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0lda"]
+size = Vector3(2.7105713, 0.17419434, 1.6535645)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0d23k"]
+size = Vector3(2.6983643, 3.519287, 0.11437988)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llmey"]
+size = Vector3(0.109802246, 3.3154907, 1.4819336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckkng"]
+size = Vector3(0.09399414, 3.3683472, 1.4732666)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8sgg"]
+size = Vector3(2.696045, 0.16125488, 1.6257324)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygmrj"]
+size = Vector3(2.252943, 3.195054, 1.0749917)
+
+[node name="ormar" type="Node3D" unique_id=136312617]
+script = ExtResource("1_mq54w")
+
+[node name="okvir" type="Node3D" parent="." unique_id=287676946]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="okvir" unique_id=305143807]
+transform = Transform3D(2.4085321, 0, 0, 0, 3.462, 0, 0, 0, 0.152, 0, -0.08317734, 0)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="okvir" unique_id=1352998420]
+transform = Transform3D(2.7330096, 0, 0, 0, -7.602974e-08, -0.16890168, 0, 1.7393577, -7.382927e-09, 0, 1.6582683, -0.78724194)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="okvir" unique_id=365097051]
+transform = Transform3D(2.6937344, 0, 0, 0, -7.602974e-08, -0.16890168, 0, 1.7393577, -7.382927e-09, 0, -1.8401539, -0.78724194)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="okvir" unique_id=924477525]
+transform = Transform3D(-6.6397604e-08, 0, -0.151, 0, 3.462, 0, 1.519, 0, -6.6004193e-09, -1.272, -0.075, -0.723)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="okvir" unique_id=2027620115]
+transform = Transform3D(-6.6397604e-08, 0, -0.151, 0, 3.462, 0, 1.519, 0, -6.6004193e-09, 1.277, -0.08037269, -0.68774337)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="vrata" type="Node3D" parent="." unique_id=582040283]
+
+[node name="lijeva_vrata_ormar" parent="vrata" unique_id=1835324180 instance=ExtResource("3_mq54w")]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 1.3043714, -0.26503032, -1.4587544)
+
+[node name="desna_vrata_ormar" parent="vrata" unique_id=45225320 instance=ExtResource("2_mq54w")]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000002, -1.3041966, -0.26587, -1.4823656)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1534463952]
+libraries/ = SubResource("AnimationLibrary_c6485")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=930580613]
+collision_layer = 16
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_f4aey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1181462910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020324707, 1.6658325, -0.7840576)
+shape = SubResource("BoxShape3D_b0lda")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=664196574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015258789, -0.16833496, 0.02142334)
+shape = SubResource("BoxShape3D_0d23k")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1914196423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.299469, -0.08340454, -0.70751953)
+shape = SubResource("BoxShape3D_llmey")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=250557694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.317749, -0.0942688, -0.78240967)
+shape = SubResource("BoxShape3D_ckkng")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=716335274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020751953, -1.8532104, -0.8555908)
+shape = SubResource("BoxShape3D_n8sgg")
+
+[node name="Timer" type="Timer" parent="." unique_id=781649964]
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="." unique_id=79605959]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=489574199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031085014, -0.124662876, -0.7854893)
+shape = SubResource("BoxShape3D_ygmrj")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1437808750]
+attenuation_model = 2
+unit_size = 7.0
+bus = &"efekti_zvuka"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

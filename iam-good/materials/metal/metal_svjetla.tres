@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://wetwdbtwbyrk"]
+
+[ext_resource type="Texture2D" uid="uid://djfhc66dat72q" path="res://teksture/metal_svjetla/BrushedIron01_2K_BaseColor.png" id="1_ldeyj"]
+[ext_resource type="Texture2D" uid="uid://djommrcmvdton" path="res://teksture/metal_svjetla/BrushedIron01_2K_Metallic.png" id="2_jij0y"]
+[ext_resource type="Texture2D" uid="uid://bdw6dbs2okxtg" path="res://teksture/metal_svjetla/BrushedIron01_2K_Normal.png" id="3_or1ly"]
+[ext_resource type="Texture2D" uid="uid://dvsoa0iojn04d" path="res://teksture/metal_svjetla/BrushedIron01_2K_Roughness.png" id="4_t3ql8"]
+
+[resource]
+albedo_texture = ExtResource("1_ldeyj")
+metallic = 1.0
+metallic_specular = 1.0
+metallic_texture = ExtResource("2_jij0y")
+roughness = 0.79
+roughness_texture = ExtResource("4_t3ql8")
+normal_enabled = true
+normal_texture = ExtResource("3_or1ly")
+refraction_scale = -0.45

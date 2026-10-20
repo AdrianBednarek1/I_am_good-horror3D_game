@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1payfm8nvw8k"]
+
+[ext_resource type="Texture2D" uid="uid://dl5227i07e08n" path="res://teksture/protivnik_teksture/Hair_baseTexBaked.png" id="1_jppwd"]
+[ext_resource type="Texture2D" uid="uid://dw7n0a5jf8tq2" path="res://teksture/protivnik_teksture/Hair_normals.png" id="2_ql4e1"]
+[ext_resource type="Texture2D" uid="uid://e62ld4xk3c1l" path="res://teksture/protivnik_teksture/Hair_Spec.png" id="3_7miqe"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_jppwd")
+roughness_texture = ExtResource("3_7miqe")
+normal_enabled = true
+normal_scale = 0.84
+normal_texture = ExtResource("2_ql4e1")

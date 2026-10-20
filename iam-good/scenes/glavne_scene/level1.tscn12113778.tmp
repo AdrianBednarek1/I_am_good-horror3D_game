@@ -1,0 +1,933 @@
+[gd_scene format=3 uid="uid://bvbwviyigatjy"]
+
+[ext_resource type="Script" uid="uid://brjsnjtov2r43" path="res://scripts/Main.gd" id="1_giv8n"]
+[ext_resource type="PackedScene" uid="uid://dd8bfm0rlyacn" path="res://scenes/mape/mapa1.tscn" id="1_xyqoq"]
+[ext_resource type="PackedScene" uid="uid://bnbo0m56a0ovw" path="res://scenes/UI/inventar.tscn" id="2_2t1pn"]
+[ext_resource type="PackedScene" uid="uid://dyvvgu60p5nb" path="res://scenes/UI/item_pregled.tscn" id="3_5kgfy"]
+[ext_resource type="PackedScene" uid="uid://dii3nks078b2y" path="res://scenes/UI/obavjest.tscn" id="4_2tvko"]
+[ext_resource type="PackedScene" uid="uid://cmd1rkghdx5fp" path="res://scenes/UI/pin_ui.tscn" id="5_ww6q4"]
+[ext_resource type="PackedScene" uid="uid://l6rartr6w74d" path="res://scenes/UI/slika_jump_scare_ui.tscn" id="6_giv8n"]
+[ext_resource type="PackedScene" uid="uid://ciqser68qvbvt" path="res://scenes/UI/upravitelj_ui.tscn" id="7_qcx86"]
+[ext_resource type="PackedScene" uid="uid://dghvfsjccl0q8" path="res://scenes/UI/paused_UI.tscn" id="9_hfi0j"]
+[ext_resource type="PackedScene" uid="uid://ddwp6u4q2binj" path="res://scenes/ostalo/upravitelj.tscn" id="11_qcx86"]
+[ext_resource type="PackedScene" uid="uid://cope47o4eoqd4" path="res://scenes/interaktivni_objekti/vrata/okvir_vrata.tscn" id="12_qcx86"]
+[ext_resource type="PackedScene" uid="uid://c38l567d4j0oy" path="res://scenes/interaktivni_objekti/Ormar/ormar.tscn" id="13_h4dif"]
+[ext_resource type="PackedScene" uid="uid://hdrrsghccfgc" path="res://scenes/ostalo/teleport.tscn" id="14_fj6qn"]
+[ext_resource type="PackedScene" uid="uid://cf25nogsophx7" path="res://scenes/interaktivne_stvari/oko.tscn" id="15_ph7sp"]
+[ext_resource type="PackedScene" uid="uid://bjkx8yngxqhtx" path="res://scenes/interaktivne_stvari/papir.tscn" id="16_6b1m8"]
+[ext_resource type="Texture2D" uid="uid://dkplgtrctmyay" path="res://teksture/slike_tekstura/oko.png" id="16_k81ct"]
+[ext_resource type="Texture2D" uid="uid://dp44bh211dx4j" path="res://teksture/slike_tekstura/slika4.png" id="17_1q2no"]
+[ext_resource type="Script" uid="uid://2y2b5c0tst2d" path="res://scripts/Papir_resurs.gd" id="17_4er15"]
+[ext_resource type="Script" uid="uid://dtsvbngq2yoxt" path="res://scripts/Oko_resurs.gd" id="17_hnwlp"]
+[ext_resource type="Texture2D" uid="uid://cn8gkrng2mb51" path="res://teksture/slike_tekstura/Papir_mapa_drugi_kat.jpeg" id="17_risu0"]
+[ext_resource type="Texture2D" uid="uid://du7s8ics4c25j" path="res://teksture/slike_tekstura/tu_sam_1234.jpeg" id="18_171dl"]
+[ext_resource type="Texture2D" uid="uid://djl2rej4vpmox" path="res://teksture/slike_tekstura/pokupi_sve_papire.jpeg" id="18_upqe1"]
+[ext_resource type="Texture2D" uid="uid://c07owfmwj6xv" path="res://teksture/slike_tekstura/papir1.png" id="19_5wdv8"]
+[ext_resource type="Texture2D" uid="uid://cia5702lcs3uj" path="res://teksture/slike_tekstura/Dolazim.jpeg" id="19_risu0"]
+[ext_resource type="Texture2D" uid="uid://fn2aguv8xri3" path="res://teksture/slike_tekstura/Papir_mapa_nulti_kat.jpeg" id="20_2tsb4"]
+[ext_resource type="PackedScene" uid="uid://tyio1higlyqe" path="res://scenes/interaktivni_objekti/sef/Sef.tscn" id="20_5wdv8"]
+[ext_resource type="Texture2D" uid="uid://bq8307ur3rdna" path="res://teksture/slike_tekstura/tutorial.jpeg" id="21_g8toc"]
+[ext_resource type="Texture2D" uid="uid://xawk25746c4g" path="res://teksture/slike_tekstura/Gdje_bjezis.jpeg" id="21_s8gkk"]
+[ext_resource type="Texture2D" uid="uid://c4yxyg3qe8vfp" path="res://teksture/slike_tekstura/slika_igrac2.png" id="22_2resg"]
+[ext_resource type="Texture2D" uid="uid://botme8mwpu6a8" path="res://teksture/slike_tekstura/slika_kuca2.png" id="23_e357o"]
+[ext_resource type="Texture2D" uid="uid://ypur3xf2d4hl" path="res://teksture/slike_tekstura/Papir_mapa_prvi_kat.jpg" id="23_u41jm"]
+[ext_resource type="PackedScene" uid="uid://biihy48w6t2p7" path="res://scenes/interaktivni_objekti/slika.tscn" id="27_4rhra"]
+[ext_resource type="Texture2D" uid="uid://b0ig4rdqseivl" path="res://teksture/slike_tekstura/slika3.png" id="27_de46i"]
+[ext_resource type="Texture2D" uid="uid://c17v1pfw7tgiw" path="res://teksture/slike_tekstura/icon.svg" id="28_7nu0t"]
+[ext_resource type="PackedScene" uid="uid://cj3l0xch83g1k" path="res://scenes/interaktivne_stvari/kljuc.tscn" id="28_354em"]
+[ext_resource type="PackedScene" uid="uid://dlcteaofrt3dd" path="res://scenes/interaktivni_objekti/svijetlo/zarulja.tscn" id="28_tsvgg"]
+[ext_resource type="Texture2D" uid="uid://ct87dvcmd6qwf" path="res://teksture/slike_tekstura/kljuc.png" id="29_ebosk"]
+[ext_resource type="Texture2D" uid="uid://c3x66holypp5m" path="res://teksture/slike_tekstura/slik6.png" id="29_g8toc"]
+[ext_resource type="PackedScene" uid="uid://brirto3vac0iu" path="res://scenes/interaktivni_objekti/svijetlo/okidac.tscn" id="29_mrq3p"]
+[ext_resource type="Script" uid="uid://cdcgq2upmi752" path="res://scripts/Kljuc_resurs.gd" id="30_1ewut"]
+[ext_resource type="PackedScene" uid="uid://dkicfu1f6m08k" path="res://scenes/interaktivni_objekti/Cilj/Cilj.tscn" id="30_5qfq6"]
+[ext_resource type="Texture2D" uid="uid://kc0d2qh0ycx" path="res://teksture/slike_tekstura/slika5.png" id="30_yundp"]
+[ext_resource type="Texture2D" uid="uid://b46uvtttlicqy" path="res://teksture/slike_tekstura/slika2.png" id="31_v3aio"]
+[ext_resource type="Texture2D" uid="uid://b3pblmmomb3oc" path="res://teksture/slike_tekstura/slika1.png" id="32_72kra"]
+[ext_resource type="PackedScene" uid="uid://85vycj2f765r" path="res://scenes/protivnik/protivnik.scn" id="33_354em"]
+[ext_resource type="PackedScene" uid="uid://pjeqyawfdxen" path="res://scenes/ostalo/zastrasivanje.scn" id="34_ebosk"]
+[ext_resource type="Texture2D" uid="uid://bd53opc0rnh02" path="res://teksture/slike_tekstura/slika_igrac.png" id="34_wievv"]
+[ext_resource type="PackedScene" uid="uid://b4yk7g2gwfw33" path="res://scenes/ostalo/pokreni_animaciju.tscn" id="35_1ewut"]
+[ext_resource type="Texture2D" uid="uid://bkcrs14olrov" path="res://teksture/slike_tekstura/jump_scare_slika_1111.jpeg" id="36_narsm"]
+[ext_resource type="Texture2D" uid="uid://b0u60gubaouh2" path="res://teksture/slike_tekstura/slika_1111.jpeg" id="37_s8gkk"]
+[ext_resource type="Script" uid="uid://dos3hb2pqjmxu" path="res://scripts/upravitelj_glazbe.gd" id="38_c1574"]
+[ext_resource type="PackedScene" uid="uid://3q6sy1g8d13r" path="res://scenes/interaktivne_stvari/trokut.tscn" id="38_upgm7"]
+[ext_resource type="Texture2D" uid="uid://b2p1lmcjwkk4o" path="res://teksture/slike_tekstura/jump_scare_3333.jpeg" id="38_v3aio"]
+[ext_resource type="AudioStream" uid="uid://bgm7ahtx4f38" path="res://audio/horror2.mp3" id="38_whlrj"]
+[ext_resource type="Texture2D" uid="uid://clyofmo63itv6" path="res://teksture/slike_tekstura/kuca_slika.jpeg" id="39_2resg"]
+[ext_resource type="Texture2D" uid="uid://dae7o1fsth634" path="res://teksture/teksture_stvari/trokut.jpg" id="39_c1574"]
+[ext_resource type="PackedScene" uid="uid://c7j8ty8qcx685" path="res://scenes/igrac/igrac.scn" id="39_whlrj"]
+[ext_resource type="PackedScene" uid="uid://bseru2g2x6m2s" path="res://scenes/ostalo/table.tscn" id="40_c1574"]
+[ext_resource type="Script" uid="uid://esi56a5abrbu" path="res://scripts/trokut_resurs.gd" id="40_hfi0j"]
+
+[sub_resource type="Resource" id="Resource_e357o"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_gbek2"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_ou76t"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_scfra"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_q125r"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_nl0bt"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_x8n87"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_m55wc"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_0ycu3"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_ml7km"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_nf55y"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_cda2j"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_a6f40"]
+resource_local_to_scene = true
+script = ExtResource("17_hnwlp")
+Name = "oko"
+Item_Image = ExtResource("16_k81ct")
+metadata/_custom_type_script = "uid://dtsvbngq2yoxt"
+
+[sub_resource type="Resource" id="Resource_jhnjj"]
+script = ExtResource("17_4er15")
+tekst = "Vidim te. Gdje bježiš?"
+Name = "Papir"
+Item_Image = ExtResource("19_5wdv8")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_3xvmj"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Mapa drugog kata"
+Name = "Papir - mapa"
+Item_Image = ExtResource("17_risu0")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_qd4ub"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Tu sam :). 1234"
+Name = "Papir"
+Item_Image = ExtResource("18_171dl")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_12p1f"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Dolazim:)"
+Name = "Papir"
+Item_Image = ExtResource("19_risu0")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_63g8r"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Mapa nultog kata"
+Name = "Papir - mapa"
+Item_Image = ExtResource("20_2tsb4")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_4232l"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Gdje bjezis?"
+Name = "Papir"
+Item_Image = ExtResource("21_s8gkk")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_agu3f"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+Name = "Papir"
+Item_Image = ExtResource("22_2resg")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_u8hyb"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+Name = "Papir"
+Item_Image = ExtResource("23_e357o")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_67shl"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Pokupi sve papire kako bi se otvorio izlaz."
+Name = "Papir - upute"
+Item_Image = ExtResource("18_upqe1")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_043yw"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Kontrole"
+Name = "Papir"
+Item_Image = ExtResource("21_g8toc")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_u4odd"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "opis"
+Name = "Papir"
+Item_Image = ExtResource("31_v3aio")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_kuqfg"]
+resource_local_to_scene = true
+script = ExtResource("17_4er15")
+tekst = "Mapa prvog kata"
+Name = "Papir - mapa"
+Item_Image = ExtResource("23_u41jm")
+unique = true
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[sub_resource type="Resource" id="Resource_ure5s"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_vhdla"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_nfyvy"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_4rmte"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_32yr6"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_6tj5b"]
+resource_local_to_scene = true
+script = ExtResource("30_1ewut")
+Name = "Kljuc"
+Item_Image = ExtResource("29_ebosk")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="Resource" id="Resource_g8toc"]
+script = ExtResource("40_hfi0j")
+Name = "Trokut"
+Item_Image = ExtResource("39_c1574")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="Resource" id="Resource_t5qki"]
+resource_local_to_scene = true
+script = ExtResource("40_hfi0j")
+Name = "Trokut"
+Item_Image = ExtResource("39_c1574")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="Resource" id="Resource_0sioe"]
+resource_local_to_scene = true
+script = ExtResource("40_hfi0j")
+Name = "Trokut"
+Item_Image = ExtResource("39_c1574")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="Resource" id="Resource_ne2a7"]
+resource_local_to_scene = true
+script = ExtResource("40_hfi0j")
+Name = "Trokut"
+Item_Image = ExtResource("39_c1574")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="Resource" id="Resource_ew3hw"]
+resource_local_to_scene = true
+script = ExtResource("40_hfi0j")
+Name = "Trokut"
+Item_Image = ExtResource("39_c1574")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="Environment" id="Environment_tsvgg"]
+background_mode = 1
+ambient_light_source = 1
+ambient_light_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+ambient_light_energy = 0.0
+tonemap_mode = 3
+ssr_max_steps = 51
+ssr_fade_in = 0.4707497
+ssr_fade_out = 0.51763237
+ssao_radius = 13.49
+ssao_intensity = 16.0
+ssao_detail = 4.36
+ssao_horizon = 0.77
+ssao_light_affect = 0.53
+ssao_ao_channel_affect = 1.0
+fog_enabled = true
+fog_light_color = Color(0.44998366, 0.41997612, 0.4160149, 1)
+fog_density = 0.005
+fog_height = 0.1
+adjustment_enabled = true
+adjustment_brightness = 1.17
+
+[node name="Level1" type="Node3D" unique_id=481630314 node_paths=PackedStringArray("player", "upravitelj_ui", "protivnik", "upravitelj", "izlaz_iz_levela", "mapa")]
+script = ExtResource("1_giv8n")
+player = NodePath("igrac")
+upravitelj_ui = NodePath("CanvasLayer/upravitelj_UI")
+protivnik = NodePath("protivnik")
+upravitelj = NodePath("upravitelj")
+izlaz_iz_levela = NodePath("interaktivne_stvari/VRATA/okvir_vrata12")
+mapa = NodePath("Mapa")
+
+[node name="Mapa" parent="." unique_id=1739097980 instance=ExtResource("1_xyqoq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00091695786, -0.04954171, 0.014051914)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1094201046]
+
+[node name="inventar" parent="CanvasLayer" unique_id=1857082203 instance=ExtResource("2_2t1pn")]
+
+[node name="item_pregled" parent="CanvasLayer" unique_id=196900236 instance=ExtResource("3_5kgfy")]
+
+[node name="obavjest" parent="CanvasLayer" unique_id=1012999208 instance=ExtResource("4_2tvko")]
+
+[node name="pin_UI" parent="CanvasLayer" unique_id=894656522 instance=ExtResource("5_ww6q4")]
+
+[node name="slika_jump_scare_ui" parent="CanvasLayer" unique_id=1204197071 instance=ExtResource("6_giv8n")]
+
+[node name="upravitelj_UI" parent="CanvasLayer" unique_id=1141750365 instance=ExtResource("7_qcx86")]
+
+[node name="paused_ui" parent="CanvasLayer" unique_id=365549503 instance=ExtResource("9_hfi0j")]
+mouse_filter = 2
+
+[node name="upravitelj" parent="." unique_id=9100332 instance=ExtResource("11_qcx86")]
+
+[node name="interaktivne_stvari" type="Node3D" parent="." unique_id=1829848211]
+
+[node name="OKO" type="Node3D" parent="interaktivne_stvari" unique_id=61932581]
+
+[node name="Oko5" parent="interaktivne_stvari/OKO" unique_id=994953666 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -2.9679368, 1.1945103, -16.371881)
+podaci_itema = SubResource("Resource_e357o")
+
+[node name="Oko11" parent="interaktivne_stvari/OKO" unique_id=737198049 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -12.886884, -1.5974479, -16.371881)
+podaci_itema = SubResource("Resource_gbek2")
+
+[node name="Oko12" parent="interaktivne_stvari/OKO" unique_id=1108448041 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -12.886884, -1.5974479, -11.064364)
+podaci_itema = SubResource("Resource_ou76t")
+
+[node name="Oko13" parent="interaktivne_stvari/OKO" unique_id=743124408 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -12.886884, -1.5974479, -7.4470954)
+podaci_itema = SubResource("Resource_scfra")
+
+[node name="Oko6" parent="interaktivne_stvari/OKO" unique_id=70727421 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -5.3306036, 1.1945103, -16.371881)
+podaci_itema = SubResource("Resource_q125r")
+
+[node name="Oko7" parent="interaktivne_stvari/OKO" unique_id=487819524 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -16.840807, 1.4073707, -8.335098)
+podaci_itema = SubResource("Resource_nl0bt")
+
+[node name="Oko8" parent="interaktivne_stvari/OKO" unique_id=1314872467 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -14.744049, 1.4073707, -8.335098)
+podaci_itema = SubResource("Resource_x8n87")
+
+[node name="Oko10" parent="interaktivne_stvari/OKO" unique_id=1996658418 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.09773917, 0, -0.9952121, 0, 1, 0, 0.9952121, 0, 0.09773917, -14.744049, 1.4073707, -8.335098)
+podaci_itema = SubResource("Resource_m55wc")
+
+[node name="Oko3" parent="interaktivne_stvari/OKO" unique_id=1882702791 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -17.800001, 4.7000003, -10.7)
+podaci_itema = SubResource("Resource_0ycu3")
+
+[node name="Oko4" parent="interaktivne_stvari/OKO" unique_id=1862887301 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -15.400002, 4.7000003, -10.7)
+podaci_itema = SubResource("Resource_ml7km")
+
+[node name="Oko9" parent="interaktivne_stvari/OKO" unique_id=2093751175 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 5.1000004, 4.2000003, -10.800001)
+podaci_itema = SubResource("Resource_nf55y")
+
+[node name="Oko14" parent="interaktivne_stvari/OKO" unique_id=1700740496 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.07974652, 0, 0.7974521, 0, 0.79999983, 0, -0.9968152, 0, 0.06379724, -7.6776943, -1.6929605, -6.5531917)
+podaci_itema = SubResource("Resource_cda2j")
+
+[node name="Oko15" parent="interaktivne_stvari/OKO" unique_id=962015829 instance=ExtResource("15_ph7sp")]
+transform = Transform3D(0.07974652, 0, 0.7974521, 0, 0.79999983, 0, -0.9968152, 0, 0.06379724, -5.796096, -1.6929605, -1.3089504)
+podaci_itema = SubResource("Resource_a6f40")
+
+[node name="PAPIRI" type="Node3D" parent="interaktivne_stvari" unique_id=1272132828]
+
+[node name="papir10" parent="interaktivne_stvari/PAPIRI" unique_id=108936457 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-0.9999376, 0, 0.0111698415, 0, 1, 0, -0.0111698415, 0, -0.9999376, -15.187286, -1.3711731, -0.19529665)
+podaci_itema = SubResource("Resource_jhnjj")
+
+[node name="papir4" parent="interaktivne_stvari/PAPIRI" unique_id=591491747 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.8, -5.5)
+podaci_itema = SubResource("Resource_3xvmj")
+
+[node name="papir12" parent="interaktivne_stvari/PAPIRI" unique_id=528969643 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-0.018604176, 0, 0.9998268, 0, 1, 0, -0.9998268, 0, -0.018604176, -1.9014603, 4.7955513, -10.103317)
+podaci_itema = SubResource("Resource_qd4ub")
+
+[node name="papir5" parent="interaktivne_stvari/PAPIRI" unique_id=1410783364 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(0.07144523, 0, 0.9974445, 0, 1, 0, -0.9974445, 0, 0.07144523, -18.542599, 4.561909, -1.7344582)
+podaci_itema = SubResource("Resource_12p1f")
+
+[node name="papir6" parent="interaktivne_stvari/PAPIRI" unique_id=1234834275 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-0.9999994, 0, -0.0011347532, 0, 1, 0, 0.0011347532, 0, -0.9999994, -1.9431862, -1.7429193, -11.441276)
+podaci_itema = SubResource("Resource_63g8r")
+
+[node name="papir7" parent="interaktivne_stvari/PAPIRI" unique_id=968684807 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-0.9999994, 0, -0.0011347532, 0, 1, 0, 0.0011347532, 0, -0.9999994, -5.8275924, -1.470619, -7.343193)
+podaci_itema = SubResource("Resource_4232l")
+
+[node name="papir8" parent="interaktivne_stvari/PAPIRI" unique_id=1534941330 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(0.1433202, 0, -0.9896764, 0, 1, 0, 0.9896764, 0, 0.1433202, 4.894632, -2.3180552, -8.760342)
+podaci_itema = SubResource("Resource_agu3f")
+
+[node name="papir9" parent="interaktivne_stvari/PAPIRI" unique_id=288973213 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(0.999669, 0, 0.02572356, 0, 1, 0, -0.02572356, 0, 0.999669, -5.6803718, -1.4684395, -6.9145555)
+podaci_itema = SubResource("Resource_u8hyb")
+
+[node name="papir" parent="interaktivne_stvari/PAPIRI" unique_id=1172578905 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.8, 4.7000003, -9.900001)
+podaci_itema = SubResource("Resource_67shl")
+
+[node name="papir2" parent="interaktivne_stvari/PAPIRI" unique_id=1630513419 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.6, 4.3, -6.2000003)
+podaci_itema = SubResource("Resource_043yw")
+
+[node name="papir13" parent="interaktivne_stvari/PAPIRI" unique_id=1778463103 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(0.006730693, -0.9998218, -0.017636895, 0.003073311, -0.017616525, 0.9998401, -0.9999727, -0.0067838207, 0.0029541915, -11.977328, -2.0884624, -14.203073)
+podaci_itema = SubResource("Resource_u4odd")
+
+[node name="papir14" parent="interaktivne_stvari/PAPIRI" unique_id=210521793 instance=ExtResource("16_6b1m8")]
+transform = Transform3D(0.006730693, -0.9998218, -0.017636895, -0.99996614, -0.0066458676, -0.0048636682, 0.00474559, 0.01766903, -0.99983263, -12.208848, 1.3212721, -2.3910239)
+podaci_itema = SubResource("Resource_kuqfg")
+
+[node name="VRATA" type="Node3D" parent="interaktivne_stvari" unique_id=847413620]
+
+[node name="okvir_vrata6" parent="interaktivne_stvari/VRATA" unique_id=1034742117 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -16.800001, -3.2, -11.3)
+kljuc = NodePath("../../KLJUC/Kljuc5")
+
+[node name="okvir_vrata7" parent="interaktivne_stvari/VRATA" unique_id=2108414160 instance=ExtResource("12_qcx86")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.800001, -3.2, -7.1000004)
+
+[node name="okvir_vrata8" parent="interaktivne_stvari/VRATA" unique_id=289391751 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.5, -3.2, -9.2)
+
+[node name="okvir_vrata9" parent="interaktivne_stvari/VRATA" unique_id=1315288756 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.5000002, -3.2, -9.2)
+kljuc = NodePath("../../KLJUC/Kljuc6")
+
+[node name="okvir_vrata10" parent="interaktivne_stvari/VRATA" unique_id=764422901 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7, -3.2, -11.3)
+
+[node name="okvir_vrata11" parent="interaktivne_stvari/VRATA" unique_id=162194999 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.5, -3.2, -3.6000001)
+kljuc = NodePath("../../KLJUC/Kljuc4")
+
+[node name="okvir_vrata" parent="interaktivne_stvari/VRATA" unique_id=642080143 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9, 3.2, -2.2)
+kljuc = NodePath("../../KLJUC/Kljuc2")
+
+[node name="okvir_vrata2" parent="interaktivne_stvari/VRATA" unique_id=836642401 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.8, 3.2, -5.7000003)
+otkljucano = false
+kljuc = NodePath("../../KLJUC/Kljuc")
+
+[node name="okvir_vrata3" parent="interaktivne_stvari/VRATA" unique_id=560545876 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.1, 3.2, -14.8)
+
+[node name="okvir_vrata4" parent="interaktivne_stvari/VRATA" unique_id=67087538 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.3, 0, -6.4)
+
+[node name="okvir_vrata5" parent="interaktivne_stvari/VRATA" unique_id=206077165 node_paths=PackedStringArray("kljuc") instance=ExtResource("12_qcx86")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.500001, 0, -6.4)
+kljuc = NodePath("../../KLJUC/Kljuc3")
+
+[node name="okvir_vrata12" parent="interaktivne_stvari/VRATA" unique_id=1195266927 instance=ExtResource("12_qcx86")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.352005, 0, -0.1)
+
+[node name="ORMAR" type="Node3D" parent="interaktivne_stvari" unique_id=1010180188]
+
+[node name="ormar" parent="interaktivne_stvari/ORMAR" unique_id=136312617 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.75, 0, 8.742277e-08, 0, 0.7, 0, -6.556708e-08, 0, -0.99999994, 2.3000002, 4.6, -16.6)
+
+[node name="ormar3" parent="interaktivne_stvari/ORMAR" unique_id=703094326 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.011806734, 0, -0.9998759, 0, 0.6999999, 0, 0.749907, 0, -0.01574231, -19.658539, 1.4682184, -2.721074)
+
+[node name="ormar6" parent="interaktivne_stvari/ORMAR" unique_id=454113372 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.011806734, 0, -0.9998759, 0, 0.6999999, 0, 0.749907, 0, -0.01574231, -19.658539, -1.8276095, -14.15181)
+
+[node name="ormar4" parent="interaktivne_stvari/ORMAR" unique_id=1279602433 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.011806734, 0, -0.9998759, 0, 0.6999999, 0, 0.749907, 0, -0.01574231, -10.23937, -1.8878546, -2.8206282)
+
+[node name="ormar5" parent="interaktivne_stvari/ORMAR" unique_id=1371889906 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-0.02272071, 0, 0.9995408, 0, 0.6999999, 0, -0.7496557, 0, -0.03029427, -10.822952, -1.8878546, -3.449829)
+
+[node name="ormar2" parent="interaktivne_stvari/ORMAR" unique_id=1809281824 instance=ExtResource("13_h4dif")]
+transform = Transform3D(-3.278353e-08, 0, -0.9999999, 0, 0.7, 0, 0.74999994, 0, -4.371138e-08, -20, 4.6, -5.000001)
+
+[node name="Area3D" parent="interaktivne_stvari/ORMAR/ormar2" index="5" unique_id=79605959]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TELEPORT" type="Node3D" parent="interaktivne_stvari" unique_id=579455520]
+
+[node name="Teleport" parent="interaktivne_stvari/TELEPORT" unique_id=420435269 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6000004, 4.1000004, -6.700001)
+drugi_teleport = NodePath("../Teleport2")
+
+[node name="Teleport2" parent="interaktivne_stvari/TELEPORT" unique_id=1155825777 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.2999996, 1.2000005, -5.000001)
+drugi_teleport = NodePath("../Teleport")
+
+[node name="Teleport5" parent="interaktivne_stvari/TELEPORT" unique_id=203015219 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(-0.069268845, 0, -0.99759805, 0, 1, 0, 0.99759805, 0, -0.069268845, -9.518025, -2.1500514, -14.207714)
+drugi_teleport = NodePath("../Teleport6")
+
+[node name="Teleport6" parent="interaktivne_stvari/TELEPORT" unique_id=1639464489 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(0.04973893, 0, 0.99876225, 0, 1, 0, -0.99876225, 0, 0.04973893, -9.644597, 1.1369917, -14.908458)
+drugi_teleport = NodePath("../Teleport5")
+
+[node name="Teleport7" parent="interaktivne_stvari/TELEPORT" unique_id=1886353374 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(-0.017295394, 0, 0.99985045, 0, 1, 0, -0.99985045, 0, -0.017295394, -0.045621753, 1.110358, -14.970587)
+drugi_teleport = NodePath("../Teleport8")
+
+[node name="Teleport8" parent="interaktivne_stvari/TELEPORT" unique_id=843891762 node_paths=PackedStringArray("drugi_teleport") instance=ExtResource("14_fj6qn")]
+transform = Transform3D(-0.08719051, 0, -0.9961917, 0, 1, 0, 0.9961917, 0, -0.08719051, -18.443945, -2.117014, -9.098193)
+drugi_teleport = NodePath("../Teleport7")
+
+[node name="SEF" type="Node3D" parent="interaktivne_stvari" unique_id=1004894077]
+
+[node name="Sef" parent="interaktivne_stvari/SEF" unique_id=958955351 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.1000004, 4.2000003, -10.900001)
+pin = "1234"
+
+[node name="Sef3" parent="interaktivne_stvari/SEF" unique_id=1395135218 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(0.053102784, 0, -0.9985891, 0, 1, 0, 0.9985891, 0, 0.053102784, -19.807621, 4.1766586, -1.3485397)
+pin = "6666"
+
+[node name="Sef4" parent="interaktivne_stvari/SEF" unique_id=1298428530 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(0.99952286, 0, -0.030887455, 0, 1, 0, 0.030887455, 0, 0.99952286, -12.185923, 1.0851307, -1.3485397)
+pin = "5555"
+
+[node name="Sef5" parent="interaktivne_stvari/SEF" unique_id=2048089365 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(-0.046147566, 0, 0.9989347, 0, 1, 0, -0.9989347, 0, -0.046147566, 5.580203, -2.191265, -8.942288)
+pin = "3333"
+
+[node name="Sef6" parent="interaktivne_stvari/SEF" unique_id=2147177145 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(0.99800366, 0, -0.06315628, 0, 1, 0, 0.06315628, 0, 0.99800366, -18.850948, -2.191265, -0.3977375)
+pin = "1111"
+
+[node name="Sef2" parent="interaktivne_stvari/SEF" unique_id=284482066 instance=ExtResource("20_5wdv8")]
+transform = Transform3D(-0.058173686, 0, 0.99830645, 0, 1, 0, -0.99830645, 0, -0.058173686, 1.1497698, 1.0074085, -11.10816)
+pin = "2222"
+
+[node name="SLIKE" type="Node3D" parent="interaktivne_stvari" unique_id=1613490247]
+
+[node name="slika" parent="interaktivne_stvari/SLIKE" unique_id=1852337596 instance=ExtResource("27_4rhra")]
+transform = Transform3D(0.09129314, 0, 0.9958241, 0, 1, 0, -0.9958241, 0, 0.09129314, 6.172954, 4.6, -3.078516)
+iduca_slika = ExtResource("31_v3aio")
+trenutna_slika = ExtResource("28_7nu0t")
+
+[node name="slika2" parent="interaktivne_stvari/SLIKE" unique_id=1315986886 instance=ExtResource("27_4rhra")]
+transform = Transform3D(0.07356898, 0, 0.9972902, 0, 1, 0, -0.9972902, 0, 0.07356898, -12.041782, 4.6, -7.6042104)
+iduca_slika = ExtResource("29_g8toc")
+trenutna_slika = ExtResource("30_yundp")
+
+[node name="slika3" parent="interaktivne_stvari/SLIKE" unique_id=449141522 instance=ExtResource("27_4rhra")]
+transform = Transform3D(-0.033626102, 0, -0.9994345, 0, 1, 0, 0.9994345, 0, -0.033626102, -20.14753, 2.9620328, -15.6055155)
+trenutna_slika = ExtResource("17_1q2no")
+
+[node name="slika4" parent="interaktivne_stvari/SLIKE" unique_id=1673355038 instance=ExtResource("27_4rhra")]
+transform = Transform3D(0.99876845, 0, 0.049616832, 0, 1, 0, -0.049616832, 0, 0.99876845, -3.1930041, 1.3803462, -3.010065)
+iduca_slika = ExtResource("27_de46i")
+trenutna_slika = ExtResource("32_72kra")
+
+[node name="slika5" parent="interaktivne_stvari/SLIKE" unique_id=1363507509 instance=ExtResource("27_4rhra")]
+transform = Transform3D(-0.025164995, 0, 0.99968344, 0, 1, 0, -0.99968344, 0, -0.025164995, 6.2133493, 1.3803462, -1.9834224)
+iduca_slika = ExtResource("27_de46i")
+trenutna_slika = ExtResource("34_wievv")
+
+[node name="slika6" parent="interaktivne_stvari/SLIKE" unique_id=355417914 instance=ExtResource("27_4rhra")]
+transform = Transform3D(0.99996763, 0, 0.00804586, 0, 1, 0, -0.00804586, 0, 0.99996763, -8.110405, -1.7923461, -7.197084)
+iduca_slika = ExtResource("36_narsm")
+trenutna_slika = ExtResource("37_s8gkk")
+
+[node name="slika7" parent="interaktivne_stvari/SLIKE" unique_id=1546321794 instance=ExtResource("27_4rhra")]
+transform = Transform3D(0.99996763, 0, 0.00804586, 0, 1, 0, -0.00804586, 0, 0.99996763, 1.4076555, -1.5025113, -0.17568159)
+iduca_slika = ExtResource("38_v3aio")
+trenutna_slika = ExtResource("39_2resg")
+
+[node name="slika8" parent="interaktivne_stvari/SLIKE" unique_id=344782534 instance=ExtResource("27_4rhra")]
+transform = Transform3D(-0.9999549, 0, -0.009494368, 0, 1, 0, 0.009494368, 0, -0.9999549, -14.850737, -1.5025113, -16.718063)
+trenutna_slika = ExtResource("31_v3aio")
+
+[node name="KLJUC" type="Node3D" parent="interaktivne_stvari" unique_id=175654040]
+
+[node name="Kljuc" parent="interaktivne_stvari/KLJUC" unique_id=1498935320 instance=ExtResource("28_354em")]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -3.022667, 4.2476497, -15.824279)
+podaci_itema = SubResource("Resource_ure5s")
+
+[node name="Kljuc2" parent="interaktivne_stvari/KLJUC" unique_id=214981689 instance=ExtResource("28_354em")]
+transform = Transform3D(2.9802322e-08, 0, -1, -0.99958533, 0.028793957, -2.9789964e-08, 0.028793957, 0.99958533, 8.581268e-10, 2.5982182, 4.6593256, -16.420244)
+podaci_itema = SubResource("Resource_vhdla")
+
+[node name="Kljuc3" parent="interaktivne_stvari/KLJUC" unique_id=1967766120 instance=ExtResource("28_354em")]
+transform = Transform3D(-0.6535463, -0.014682668, -0.75674415, -0.022460481, 0.9997477, -6.693745e-10, 0.75655323, 0.016996838, -0.6537112, -0.37873578, 2.117645, -11.432113)
+podaci_itema = SubResource("Resource_nfyvy")
+
+[node name="Kljuc4" parent="interaktivne_stvari/KLJUC" unique_id=229541854 instance=ExtResource("28_354em")]
+transform = Transform3D(0.3540123, -0.93499005, 0.021653105, -0.93456894, -0.35278586, 0.046076857, -0.03544238, -0.036548126, -0.9987031, -10.111736, -2.4052048, -10.435276)
+podaci_itema = SubResource("Resource_4rmte")
+
+[node name="Kljuc5" parent="interaktivne_stvari/KLJUC" unique_id=1184058784 instance=ExtResource("28_354em")]
+transform = Transform3D(0.99346626, -0.00550338, -0.11399363, -0.004547473, -0.9999523, 0.008644715, -0.11403566, -0.008069783, -0.9934441, 4.359779, -2.0230775, -5.5479183)
+podaci_itema = SubResource("Resource_32yr6")
+
+[node name="Kljuc6" parent="interaktivne_stvari/KLJUC" unique_id=1479449785 instance=ExtResource("28_354em")]
+transform = Transform3D(-0.11272932, -0.015087344, -0.99351144, -0.97655284, -0.18287589, 0.11358239, -0.18340282, 0.9830202, 0.0058818446, -18.754883, -1.8250508, -1.2244884)
+podaci_itema = SubResource("Resource_6tj5b")
+
+[node name="OKIDAC" type="Node3D" parent="interaktivne_stvari" unique_id=756485127]
+
+[node name="Okidac" parent="interaktivne_stvari/OKIDAC" unique_id=1459114673 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, -8.400001, 4.8071346, -5.551824)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja")
+
+[node name="Okidac2" parent="interaktivne_stvari/OKIDAC" unique_id=986114631 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.050453585, 0, -0.9987264, 0, 1, 0, 0.9987264, 0, 0.050453585, -8.957904, 4.8071346, -13.147946)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja26")
+
+[node name="Okidac4" parent="interaktivne_stvari/OKIDAC" unique_id=34721710 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(-0.10037921, 0, 0.9949493, 0, 1, 0, -0.9949493, 0, -0.10037921, -9.176503, 4.8071346, -13.147946)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja4")
+
+[node name="Okidac7" parent="interaktivne_stvari/OKIDAC" unique_id=1318514772 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(-0.99994755, 0, 0.010244824, 0, 1, 0, -0.010244824, 0, -0.99994755, -5.6235666, -1.8569479, -11.163848)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja12")
+
+[node name="Okidac8" parent="interaktivne_stvari/OKIDAC" unique_id=652169815 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(-0.99994755, 0, 0.010244824, 0, 1, 0, -0.010244824, 0, -0.99994755, -15.445857, -1.8569479, -6.93696)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja20")
+
+[node name="Okidac9" parent="interaktivne_stvari/OKIDAC" unique_id=945821832 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.9999959, 0, 0.0029148906, 0, 1, 0, -0.0029148906, 0, 0.9999959, -15.5558815, -1.8569479, -11.383065)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja17")
+
+[node name="Okidac10" parent="interaktivne_stvari/OKIDAC" unique_id=1166271754 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.00685934, 0, -0.9999765, 0, 1, 0, 0.9999765, 0, 0.00685934, -3.3397183, -1.8569479, -7.3513103)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja13")
+
+[node name="Okidac11" parent="interaktivne_stvari/OKIDAC" unique_id=1804922006 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.00685934, 0, -0.9999765, 0, 1, 0, 0.9999765, 0, 0.00685934, -3.3397183, -1.8569479, -5.0664625)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja14")
+
+[node name="Okidac3" parent="interaktivne_stvari/OKIDAC" unique_id=780022644 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.050453585, 0, -0.9987264, 0, 1, 0, 0.9987264, 0, 0.050453585, -6.09302, 0.94291186, -8.12033)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja19")
+
+[node name="Okidac6" parent="interaktivne_stvari/OKIDAC" unique_id=1540612531 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.007155616, 0, 0.9999744, 0, 1, 0, -0.9999744, 0, 0.007155616, -10.620351, 1.3950707, -4.8038344)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja22")
+
+[node name="Okidac5" parent="interaktivne_stvari/OKIDAC" unique_id=175046280 node_paths=PackedStringArray("ukljuci_objekt") instance=ExtResource("29_mrq3p")]
+transform = Transform3D(0.015201069, 0, 0.9998845, 0, 1, 0, -0.9998845, 0, 0.015201069, -11.958854, 4.2869883, -3.8127432)
+ukljuci_objekt = NodePath("../../../zarulje/zarulja25")
+
+[node name="TROKUT" type="Node3D" parent="interaktivne_stvari" unique_id=774770675]
+
+[node name="trokut" parent="interaktivne_stvari/TROKUT" unique_id=357338196 instance=ExtResource("38_upgm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.774937, 4.9384794, -5.5176616)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut5" parent="interaktivne_stvari/TROKUT" unique_id=1628098132 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.755913, 1.7436018, -5.236208)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut6" parent="interaktivne_stvari/TROKUT" unique_id=1482250802 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.755913, 1.7436018, -6.53691)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut12" parent="interaktivne_stvari/TROKUT" unique_id=1273034743 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.9976937, 0, 0.06787607, 0, 1, 0, -0.06787607, 0, 0.9976937, -0.10019636, -1.8794165, -10.110907)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut13" parent="interaktivne_stvari/TROKUT" unique_id=1185451494 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.9976937, 0, 0.06787607, 0, 1, 0, -0.06787607, 0, 0.9976937, 0.98819375, -1.8794165, -10.110907)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut14" parent="interaktivne_stvari/TROKUT" unique_id=1223635637 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.9976937, 0, 0.06787607, 0, 1, 0, -0.06787607, 0, 0.9976937, 2.0641747, -1.8794165, -10.110907)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut8" parent="interaktivne_stvari/TROKUT" unique_id=638232733 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.977688, -1.5077534, -6.2417274)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut9" parent="interaktivne_stvari/TROKUT" unique_id=1051668420 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.977688, -1.5077534, -5.292559)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut10" parent="interaktivne_stvari/TROKUT" unique_id=1040851170 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.977688, -1.5077534, -4.418544)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut11" parent="interaktivne_stvari/TROKUT" unique_id=440168006 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.07678867, 0, -0.9970475, 0, 1, 0, 0.9970475, 0, 0.07678867, -19.977688, -1.5077534, -3.4839888)
+podaci_itema = SubResource("Resource_g8toc")
+
+[node name="trokut2" parent="interaktivne_stvari/TROKUT" unique_id=1069262987 instance=ExtResource("38_upgm7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 4.8, -5.5)
+podaci_itema = SubResource("Resource_t5qki")
+
+[node name="trokut7" parent="interaktivne_stvari/TROKUT" unique_id=355758193 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.26149857, 0, -0.9652039, 0, 1, 0, 0.9652039, 0, 0.26149857, 0.29413804, 1.0943847, -10.964937)
+podaci_itema = SubResource("Resource_0sioe")
+
+[node name="trokut3" parent="interaktivne_stvari/TROKUT" unique_id=580500053 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.15346882, 0, -0.9881535, 0, 1, 0, 0.9881535, 0, 0.15346882, -2.46715, 4.751793, -11.443198)
+podaci_itema = SubResource("Resource_ne2a7")
+
+[node name="trokut4" parent="interaktivne_stvari/TROKUT" unique_id=560152052 instance=ExtResource("38_upgm7")]
+transform = Transform3D(0.15346882, 0, -0.9881535, 0, 1, 0, 0.9881535, 0, 0.15346882, -2.46715, 4.751793, -10.365808)
+podaci_itema = SubResource("Resource_ew3hw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1528543488]
+environment = SubResource("Environment_tsvgg")
+
+[node name="zarulje" type="Node3D" parent="." unique_id=1503103782]
+
+[node name="zarulja" parent="zarulje" unique_id=363736454 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9000002, 6.1000004, -3.5000002)
+upaljen = false
+
+[node name="zarulja2" parent="zarulje" unique_id=90875287 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 6.1000004, -2.9)
+
+[node name="zarulja3" parent="zarulje" unique_id=12870599 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 6.1000004, -6.0000005)
+
+[node name="zarulja4" parent="zarulje" unique_id=1167674236 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 6.1000004, -11.693636)
+upaljen = false
+
+[node name="zarulja26" parent="zarulje" unique_id=776655264 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8889737, 6.1000004, -14.677494)
+upaljen = false
+
+[node name="zarulja27" parent="zarulje" unique_id=1458371609 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.966325, 6.1000004, -8.862179)
+
+[node name="zarulja5" parent="zarulje" unique_id=177108362 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 6.1000004, -14.4)
+
+[node name="zarulja6" parent="zarulje" unique_id=1672603055 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.700001, 2.9000003, -11.499999)
+
+[node name="zarulja7" parent="zarulje" unique_id=1778221880 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.100001, 2.9000003, -6.8999987)
+
+[node name="zarulja8" parent="zarulje" unique_id=1559561718 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000015, 2.9000003, -1.3999989)
+
+[node name="zarulja9" parent="zarulje" unique_id=1412230314 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0999985, 2.9000003, -4.099999)
+
+[node name="zarulja10" parent="zarulje" unique_id=275293900 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0999985, 2.9000003, -13.999998)
+
+[node name="zarulja11" parent="zarulje" unique_id=1131677608 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9000015, -0.29999965, -15.099998)
+
+[node name="zarulja12" parent="zarulje" unique_id=1237430176 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8000016, -0.29999965, -8.899999)
+upaljen = false
+
+[node name="zarulja13" parent="zarulje" unique_id=583549239 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3465623, -0.29999965, -8.699999)
+upaljen = false
+
+[node name="zarulja19" parent="zarulje" unique_id=416178627 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0000014, 2.9000003, -7.8999987)
+upaljen = false
+
+[node name="zarulja23" parent="zarulje" unique_id=331788490 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2000012, 6.1000004, -12.5999975)
+visible = false
+
+[node name="zarulja24" parent="zarulje" unique_id=23332233 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999987, 6.1000004, -10.499997)
+
+[node name="zarulja25" parent="zarulje" unique_id=466965194 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.400003, 6.1000004, -6.699997)
+upaljen = false
+
+[node name="zarulja21" parent="zarulje" unique_id=459242580 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1000013, 2.9000003, -14.799999)
+
+[node name="zarulja22" parent="zarulje" unique_id=1811400004 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.200002, 2.9000003, -4.5999994)
+upaljen = false
+
+[node name="zarulja14" parent="zarulje" unique_id=1907696249 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0999985, -0.29999965, -2.6999989)
+upaljen = false
+
+[node name="zarulja15" parent="zarulje" unique_id=321365061 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.300002, -0.29999965, -2.899999)
+
+[node name="zarulja16" parent="zarulje" unique_id=1202521172 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.200002, -0.29999965, -8.999998)
+
+[node name="zarulja17" parent="zarulje" unique_id=225691045 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.561233, -0.29999965, -13.899998)
+
+[node name="zarulja20" parent="zarulje" unique_id=2085555453 instance=ExtResource("28_tsvgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.600002, -0.29999965, -3.9999976)
+
+[node name="Cilj" parent="." unique_id=892760977 instance=ExtResource("30_5qfq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 1.1, 0.5)
+
+[node name="protivnik" parent="." unique_id=1856039647 instance=ExtResource("33_354em")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.400001, 0.6, -3.8999999)
+
+[node name="Zastrasivanje" parent="." unique_id=597844081 instance=ExtResource("34_ebosk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 3.2, 0.70000017)
+
+[node name="Zastrasivanje2" parent="Zastrasivanje" unique_id=2103211626 instance=ExtResource("34_ebosk")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -11.70192, -0.010569572, -13.810435)
+
+[node name="Zastrasivanje" parent="Zastrasivanje" unique_id=1336082843 instance=ExtResource("34_ebosk")]
+transform = Transform3D(-0.10126469, 0, 0.9948595, 0, 1, 0, -0.9948595, 0, -0.10126469, -3.2594163, -3.1996489, -16.076633)
+
+[node name="upravitelj_glazbe_level" type="Node" parent="." unique_id=1876918342]
+script = ExtResource("38_c1574")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="upravitelj_glazbe_level" unique_id=2127748622]
+stream = ExtResource("38_whlrj")
+volume_db = -9.821
+
+[node name="igrac" parent="." unique_id=254778298 instance=ExtResource("39_whlrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.5999997, -10.3)
+
+[node name="STOL" type="Node3D" parent="." unique_id=1624221739]
+
+[node name="table" parent="STOL" unique_id=480218408 instance=ExtResource("40_c1574")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1000001, 3.5, -15.3)
+
+[node name="table3" parent="STOL" unique_id=2007334204 instance=ExtResource("40_c1574")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.566928, -2.8119984, -14.00335)
+
+[node name="table2" parent="STOL" unique_id=1568973370 instance=ExtResource("40_c1574")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1704187, -2.7909036, -4.9044194)
+
+[node name="Pokretac_animacije" type="Node3D" parent="." unique_id=254464490]
+
+[node name="PokreniAnimaciju" parent="Pokretac_animacije" unique_id=1099428432 node_paths=PackedStringArray("animacija_objekta") instance=ExtResource("35_1ewut")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.4, 4.7, -3.1000001)
+animacija_objekta = NodePath("../../Zastrasivanje")
+
+[node name="PokreniAnimaciju2" parent="Pokretac_animacije" unique_id=1196101840 node_paths=PackedStringArray("animacija_objekta") instance=ExtResource("35_1ewut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.700001, 4.4, -7)
+animacija_objekta = NodePath("../../Zastrasivanje/Zastrasivanje2")
+
+[node name="PokreniAnimaciju3" parent="Pokretac_animacije" unique_id=1836928271 node_paths=PackedStringArray("animacija_objekta") instance=ExtResource("35_1ewut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7633486, 1.1751219, -8.597154)
+animacija_objekta = NodePath("../../Zastrasivanje/Zastrasivanje")
+
+[editable path="interaktivne_stvari/ORMAR/ormar2"]

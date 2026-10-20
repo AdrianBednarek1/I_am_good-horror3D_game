@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dlcteaofrt3dd"]
+
+[ext_resource type="Script" uid="uid://g78ayy06gieh" path="res://scripts/zarulja.gd" id="1_dulbj"]
+[ext_resource type="Material" uid="uid://hk8ilf3m8ptj" path="res://materials/metal/metal.tres" id="1_tf7tv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4h7pd"]
+material = ExtResource("1_tf7tv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dulbj"]
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+refraction_scale = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_4h7pd"]
+material = SubResource("StandardMaterial3D_dulbj")
+
+[node name="zarulja" type="Node3D" unique_id=363736454]
+script = ExtResource("1_dulbj")
+
+[node name="mesh" type="Node3D" parent="." unique_id=1749874383]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="mesh" unique_id=325728225]
+transform = Transform3D(0.07120667, 0, 0, 0, 0.068196304, 0, 0, 0, 0.08132694, 0, 0, 0)
+mesh = SubResource("CylinderMesh_4h7pd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="mesh" unique_id=1435126845]
+transform = Transform3D(0.22847205, 0, 0, 0, 0.22847205, 0, 0, 0, 0.22847205, 0.007058874, -0.15905233, -0.00357157)
+mesh = SubResource("SphereMesh_4h7pd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=161326067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19697331, 0)
+light_color = Color(1, 1, 0.57254905, 1)
+light_indirect_energy = 5.55
+omni_range = 6.705928

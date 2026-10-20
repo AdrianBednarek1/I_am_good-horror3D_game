@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://20llp3qg30fy"]
+
+[ext_resource type="Script" uid="uid://bfu8jgdpu2ll8" path="res://scripts/Protivnik.gd" id="1_0jnap"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1tltm"]
+shading_mode = 0
+albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u5x1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5x1t"]
+shading_mode = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_0jnap"]
+material = SubResource("StandardMaterial3D_u5x1t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jnap"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ravyg"]
+material = SubResource("StandardMaterial3D_0jnap")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0jnap"]
+radius = 0.50097656
+height = 1.0066376
+
+[node name="protivnik" type="CharacterBody3D" unique_id=1500677230]
+collision_layer = 136
+collision_mask = 19
+floor_block_on_wall = false
+floor_max_angle = 1.2217305
+script = ExtResource("1_0jnap")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=10549177]
+material_override = SubResource("StandardMaterial3D_1tltm")
+mesh = SubResource("CapsuleMesh_u5x1t")
+
+[node name="oci" type="Node3D" parent="." unique_id=1839468953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6118362, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="oci" unique_id=1272239021]
+transform = Transform3D(0.18691683, 0, 0, 0, 0.16348311, 0, 0, 0, 0.13570224, 0.16724443, 0.025343537, -0.4471112)
+mesh = SubResource("SphereMesh_0jnap")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="oci/MeshInstance3D2" unique_id=575430306]
+transform = Transform3D(0.32332706, 0, 0, 0, 0.39520773, 0, 0, 0, 0.48380977, 0.05321783, 0, -0.41207623)
+mesh = SubResource("SphereMesh_ravyg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="oci" unique_id=2047025352]
+transform = Transform3D(0.18691683, 0, 0, 0, 0.16348311, 0, 0, 0, 0.13570224, -0.11425966, 0.025343537, -0.4471112)
+mesh = SubResource("SphereMesh_0jnap")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="oci/MeshInstance3D3" unique_id=1531209830]
+transform = Transform3D(0.32332706, 0, 0, 0, 0.39520773, 0, 0, 0, 0.48380977, 0, 0, -0.41207623)
+mesh = SubResource("SphereMesh_ravyg")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=905930104]
+debug_enabled = true
+debug_path_custom_color = Color(0.87414575, 0.09151731, 0.33756518, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1829775584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4966812, 0)
+shape = SubResource("CapsuleShape3D_0jnap")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1042133684]
+transform = Transform3D(4.093622, 0, 0, 0, 4.6505513, 0, 0, 0, 1, 0, 0.3495425, 0.0016233921)
+target_position = Vector3(0, 0, -5)
+collision_mask = 247
+
+[node name="Timer" type="Timer" parent="." unique_id=236659414]
+wait_time = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=843466403]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6448432, -1.9314057)
+visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

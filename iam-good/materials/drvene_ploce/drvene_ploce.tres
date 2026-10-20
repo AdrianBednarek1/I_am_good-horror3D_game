@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c8xlaixjl3o12"]
+
+[ext_resource type="Texture2D" uid="uid://6shcmdrrylae" path="res://teksture/drvene_ploce/WoodenPlanks05_2K_BaseColor.png" id="1_u3f0k"]
+[ext_resource type="Texture2D" uid="uid://cpgfh6rx24mut" path="res://teksture/drvene_ploce/WoodenPlanks05_2K_Normal.png" id="2_ey286"]
+[ext_resource type="Texture2D" uid="uid://d0qvsw30sj66b" path="res://teksture/drvene_ploce/WoodenPlanks05_2K_Roughness.png" id="3_p605b"]
+
+[resource]
+albedo_texture = ExtResource("1_u3f0k")
+roughness_texture = ExtResource("3_p605b")
+normal_enabled = true
+normal_scale = 0.19
+normal_texture = ExtResource("2_ey286")
+uv1_scale = Vector3(0.575, 0.575, 0.575)
+uv1_triplanar = true
+uv1_world_triplanar = true

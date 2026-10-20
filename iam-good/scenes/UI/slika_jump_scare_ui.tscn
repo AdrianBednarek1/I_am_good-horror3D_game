@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://l6rartr6w74d"]
+
+[ext_resource type="Script" uid="uid://bi7ipe6lkqlbq" path="res://scripts/slika_jump_scare_ui.gd" id="1_x6npl"]
+
+[node name="slika_jump_scare_ui" type="Control" unique_id=1204197071]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_x6npl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1662078566]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="." unique_id=1136533683]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=314364209]
+bus = &"efekti_zvuka"
+
+[connection signal="hidden" from="TextureRect" to="." method="_on_texture_rect_hidden"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,216 @@
+[gd_scene format=3 uid="uid://cmd1rkghdx5fp"]
+
+[ext_resource type="Script" uid="uid://kv5tpebks88e" path="res://scripts/pin_ui.gd" id="1_5ce73"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k0ak"]
+bg_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+
+[node name="pin_UI" type="Control" unique_id=894656522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_5ce73")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=771925719]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1469400490]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1041469045]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="ekran" type="ColorRect" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=245153548]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+color = Color(0.32544088, 0.3254409, 0.32544088, 1)
+
+[node name="pin_ekran" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ekran" unique_id=1683613706]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1096780876]
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="1_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=76000776]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "1"
+
+[node name="2_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=212778378]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "2"
+
+[node name="3_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1811225191]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "3"
+
+[node name="4_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1592011853]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "4"
+
+[node name="5_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=382495725]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "5"
+
+[node name="6_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=108881319]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "6"
+
+[node name="7_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=774747072]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "7"
+
+[node name="8_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=221483739]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "8"
+
+[node name="9_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1715306851]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "9"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1551204718]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="unesi_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=91981861]
+custom_minimum_size = Vector2(65, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "Unesi"
+
+[node name="obrisi_btn" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1923139838]
+custom_minimum_size = Vector2(65, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.34781668, 0.34781697, 0.3478177, 1)
+theme_override_colors/font_pressed_color = Color(0.22670749, 0.22670749, 0.22670746, 1)
+theme_override_colors/font_hover_color = Color(0.56095487, 0.5609548, 0.56095594, 1)
+theme_override_colors/font_outline_color = Color(0.48570347, 0.48570353, 0.48570347, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5k0ak")
+text = "Obrisi"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/1_btn" to="." method="_1_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/2_btn" to="." method="_2_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/3_btn" to="." method="_3_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/4_btn" to="." method="_4_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/5_btn" to="." method="_5_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/6_btn" to="." method="_6_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/7_btn" to="." method="_7_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/8_btn" to="." method="_8_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/GridContainer/9_btn" to="." method="_9_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/unesi_btn" to="." method="_unesi_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/obrisi_btn" to="." method="_obrisi_btn_pressed"]

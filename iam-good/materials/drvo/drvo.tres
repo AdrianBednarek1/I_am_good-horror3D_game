@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://s4yml1idtswd"]
+
+[ext_resource type="Texture2D" uid="uid://ctk28mhduhoth" path="res://teksture/drvo_svjetla/Wood09_2K_BaseColor.png" id="1_afc16"]
+[ext_resource type="Texture2D" uid="uid://bmgkb41tort6c" path="res://teksture/drvo_svjetla/Wood09_2K_Normal.png" id="2_6y50v"]
+[ext_resource type="Texture2D" uid="uid://cy5d5dsb74hs7" path="res://teksture/drvo_svjetla/Wood09_2K_Roughness.png" id="3_afc16"]
+
+[resource]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.581033, 0.58103293, 0.5810329, 1)
+albedo_texture = ExtResource("1_afc16")
+metallic_specular = 0.0
+roughness = 0.37
+roughness_texture = ExtResource("3_afc16")
+normal_enabled = true
+normal_texture = ExtResource("2_6y50v")
+heightmap_scale = 0.0
+uv1_scale = Vector3(6.34, 6.34, 6.34)

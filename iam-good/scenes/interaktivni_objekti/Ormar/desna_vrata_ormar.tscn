@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d1rjc77kd7yha"]
+
+[ext_resource type="Script" uid="uid://wbpai0tvlsls" path="res://scripts/Vrata_ormara.gd" id="1_p1ods"]
+[ext_resource type="Material" uid="uid://wetwdbtwbyrk" path="res://materials/metal/metal_svjetla.tres" id="2_xybr5"]
+[ext_resource type="Material" uid="uid://b1auga7kf8djc" path="res://materials/drvo/drvo_svjetla.tres" id="3_maghj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4jvtl"]
+size = Vector3(1.2859467, 3.1968217, 0.058367252)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1enoo"]
+material = ExtResource("2_xybr5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_1enoo"]
+material = ExtResource("3_maghj")
+
+[node name="desna_vrata_ormar" type="StaticBody3D" unique_id=45225320]
+collision_layer = 20
+collision_mask = 0
+script = ExtResource("1_p1ods")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=858810743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6683299, 0.14532685, -0.0016255379)
+shape = SubResource("BoxShape3D_4jvtl")
+
+[node name="vrata" type="MeshInstance3D" parent="." unique_id=1110606344]
+transform = Transform3D(0.05321868, 0, 0, 0, 0.14129876, 0, 0, 0, 0.03854679, 0, 0, 0)
+mesh = SubResource("CylinderMesh_1enoo")
+
+[node name="okvir" type="MeshInstance3D" parent="vrata" unique_id=387010682]
+transform = Transform3D(24.307, 0, 0, 0, 23, 0, 0, 0, 1.657, 12.383733, 1.0636101, -0.041744757)
+mesh = SubResource("BoxMesh_1enoo")
+
+[node name="kvaka" type="MeshInstance3D" parent="vrata" unique_id=1445399213]
+transform = Transform3D(2.7005506, 0, 0, 0, -7.0417364e-08, -1.053502, 0, 5.9052124, -1.6880297e-07, 19.21395, 0.2187709, 0.010584517)
+mesh = SubResource("CylinderMesh_1enoo")

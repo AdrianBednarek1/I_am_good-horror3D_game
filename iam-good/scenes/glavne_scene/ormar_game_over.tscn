@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ccxrk8ywiimnq"]
+
+[ext_resource type="Script" uid="uid://d32i0epsa4n7w" path="res://scripts/Ormar_game_over.gd" id="1_p0rh3"]
+[ext_resource type="PackedScene" uid="uid://c38l567d4j0oy" path="res://scenes/interaktivni_objekti/Ormar/ormar.tscn" id="1_urxjw"]
+[ext_resource type="Script" uid="uid://nke37navwci2" path="res://scripts/Ormar_game_over_upravitelj.gd" id="4_lc8g7"]
+[ext_resource type="PackedScene" uid="uid://85vycj2f765r" path="res://scenes/protivnik/protivnik.scn" id="4_njxaw"]
+[ext_resource type="PackedScene" uid="uid://cuo3r8gkbsrkl" path="res://scenes/ostalo/upravitelj_glazbe_scena.tscn" id="5_ot35c"]
+[ext_resource type="AudioStream" uid="uid://b6bwfga623pm3" path="res://audio/game_over_ormar.mp3" id="6_yqbie"]
+
+[sub_resource type="Environment" id="Environment_njxaw"]
+background_mode = 1
+
+[node name="ormar_game_over" type="Node3D" unique_id=1179824999]
+script = ExtResource("1_p0rh3")
+
+[node name="ormar" parent="." unique_id=136312617 instance=ExtResource("1_urxjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22278988, 0.72611403, 1.7543797)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ormar" unique_id=274185555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7912524)
+omni_range = 1.5468616
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1527078607]
+transform = Transform3D(0.9998558, 0.0015293128, 0.016912235, 0, 0.99593645, -0.09005897, -0.016981238, 0.09004598, 0.99579287, -0.1740501, 0.42115653, 0.71840477)
+fov = 30.0
+
+[node name="Upravitelj" type="Node" parent="." unique_id=1128608115]
+script = ExtResource("4_lc8g7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=14220921]
+environment = SubResource("Environment_njxaw")
+
+[node name="protivnik" parent="." unique_id=1856039647 instance=ExtResource("4_njxaw")]
+transform = Transform3D(-0.9997547, 0, 0.022146473, 0, 1, 0, -0.022146473, 0, -0.9997547, -0.35424408, -1.1414981, -1.2611272)
+script = null
+
+[node name="upravitelj_glazbe_scena" parent="." unique_id=1842522112 instance=ExtResource("5_ot35c")]
+audio_stream = ExtResource("6_yqbie")

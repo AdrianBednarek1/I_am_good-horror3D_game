@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bpxqcxa8v6bcg"]
+
+[ext_resource type="Script" uid="uid://dsmul1q04w4lj" path="res://scripts/Vrata_sefa.gd" id="1_favmu"]
+[ext_resource type="PackedScene" uid="uid://bgsa1xia7ub52" path="res://scenes/interaktivni_objekti/sef/Kod.tscn" id="1_owtnt"]
+[ext_resource type="Material" uid="uid://wetwdbtwbyrk" path="res://materials/metal/metal_svjetla.tres" id="2_ptvlh"]
+[ext_resource type="Material" uid="uid://bxc21qh1q4ray" path="res://materials/metal/metal_tamni.tres" id="3_wpd4q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdmfs"]
+size = Vector3(1.68219, 1.9916382, 0.060913086)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rdmfs"]
+material = ExtResource("2_ptvlh")
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0p5i"]
+material = ExtResource("3_wpd4q")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_owtnt"]
+material = ExtResource("2_ptvlh")
+
+[node name="Sef_vrata" type="StaticBody3D" unique_id=502560235]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_favmu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=495054813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84750366, -0.0008239746, -0.0005493164)
+shape = SubResource("BoxShape3D_rdmfs")
+
+[node name="Sef_vrata" type="MeshInstance3D" parent="." unique_id=1684908317]
+transform = Transform3D(0.048870232, 2.1068491e-08, 0, -4.2723713e-09, 0.24099545, 0, 0, 0, -0.04658984, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rdmfs")
+
+[node name="Okvir" type="MeshInstance3D" parent="Sef_vrata" unique_id=984864842]
+transform = Transform3D(34.56964, 0, 0, 0, 8.292371, 0, 0, 0, -1.3379161, 17.361067, 0, 0)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="kvaka" type="MeshInstance3D" parent="Sef_vrata" unique_id=1313610717]
+transform = Transform3D(2.9087489, 0, 0, 0, -1.2486431e-07, -0.65933806, 0, 2.8565624, -2.8820581e-08, 29.296711, -7.6734416e-14, -3.3541677e-21)
+mesh = SubResource("CylinderMesh_owtnt")
+
+[node name="Kod" parent="Sef_vrata" unique_id=1680620187 instance=ExtResource("1_owtnt")]
+transform = Transform3D(20.462355, -1.7888758e-06, 0, 3.6275696e-07, 4.149456, 0, 0, 0, -21.463907, 15.886876, 0.014248781, 0.97956747)

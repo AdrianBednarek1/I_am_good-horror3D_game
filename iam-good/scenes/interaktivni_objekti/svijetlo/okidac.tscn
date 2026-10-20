@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://brirto3vac0iu"]
+
+[ext_resource type="Script" uid="uid://cmdy6arlfsifm" path="res://scripts/okidac.gd" id="1_beid5"]
+[ext_resource type="Material" uid="uid://qlo4qx7t4bi" path="res://materials/bijelo_unshaded/bijelo_unshaded.tres" id="2_l34wo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gr8fn"]
+material = ExtResource("2_l34wo")
+size = Vector3(0.2, 0.2, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_beid5"]
+size = Vector3(0.03, 0.08, 0.02)
+
+[sub_resource type="Animation" id="Animation_vkurv"]
+resource_name = "iskljuci"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.2172837, 0, 0), Vector3(-0.48171088, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l34wo"]
+resource_name = "ukljuci"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.48212972, 0, 0), Vector3(-2.2172837, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vkurv"]
+_data = {
+&"iskljuci": SubResource("Animation_vkurv"),
+&"ukljuci": SubResource("Animation_l34wo")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_beid5"]
+size = Vector3(1, 1.1, 0.051330566)
+
+[node name="Okidac" type="StaticBody3D" unique_id=1459114673]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_beid5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1954949847]
+transform = Transform3D(1.8669984, 0, 0, 0, 2.237992, 0, 0, 0, 1.3047249, 0, 0, 0)
+mesh = SubResource("BoxMesh_gr8fn")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1311699631]
+transform = Transform3D(1, 0, 0, 0, -0.6023863, 0.79820454, 0, -0.79820454, -0.6023863, 0, -0.0053351745, 0.0014338717)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=1169246948]
+transform = Transform3D(2.760835, 0, 0, 0, 2.3976035, 5.9604645e-08, 0, 4.172325e-07, 1.9142582, 0, 0.09879362, 0.0063179675)
+mesh = SubResource("BoxMesh_beid5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=393144530]
+libraries/ = SubResource("AnimationLibrary_vkurv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1249043736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018609568, -0.117749035, 0.003753662)
+shape = SubResource("BoxShape3D_beid5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=42613434]
+bus = &"efekti_zvuka"

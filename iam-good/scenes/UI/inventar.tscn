@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bnbo0m56a0ovw"]
+
+[ext_resource type="Script" uid="uid://cpscdc4ii03ug" path="res://scripts/Inventar_UI.gd" id="1_dyua8"]
+
+[node name="inventar" type="Control" unique_id=1857082203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("1_dyua8")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=574291903]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1901441391]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer" unique_id=1575438161]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="naziv_itema" type="RichTextLabel" parent="." unique_id=1376085871]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 31.0
+offset_right = 185.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 42
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

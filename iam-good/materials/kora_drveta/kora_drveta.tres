@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cp3k54muiu1yg"]
+
+[ext_resource type="Texture2D" uid="uid://6wohpi8eq27f" path="res://teksture/kora_drveta/Bark09_2K_AO.png" id="1_026v2"]
+[ext_resource type="Texture2D" uid="uid://bpsuap005dg0o" path="res://teksture/kora_drveta/Bark09_2K_Normal.png" id="2_led58"]
+[ext_resource type="Texture2D" uid="uid://dfp7jcwkg3yw3" path="res://teksture/kora_drveta/Bark09_2K_Roughness.png" id="3_gbqot"]
+
+[resource]
+albedo_color = Color(0.503133, 0.43111876, 0.32373142, 1)
+roughness = 0.0
+roughness_texture = ExtResource("3_gbqot")
+normal_texture = ExtResource("2_led58")
+ao_light_affect = 0.58
+ao_texture = ExtResource("1_026v2")
+uv1_scale = Vector3(1.05, 1.05, 1.05)
+uv1_triplanar = true
+uv1_world_triplanar = true
+grow_amount = 8.727

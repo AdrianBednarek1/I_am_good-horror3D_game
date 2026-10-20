@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ciqser68qvbvt"]
+
+[ext_resource type="Script" uid="uid://bs2ne6db5bpw6" path="res://scripts/Upravitelj_UI.gd" id="1_fgo03"]
+
+[node name="upravitelj_UI" type="Control" unique_id=1141750365]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_fgo03")

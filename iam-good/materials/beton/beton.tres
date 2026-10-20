@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bb0f82ct3o61x"]
+
+[ext_resource type="Texture2D" uid="uid://d03yvdxbxxt7c" path="res://teksture/beton/StuccoWall01_2K_BaseColor.png" id="1_os36p"]
+[ext_resource type="Texture2D" uid="uid://doix8l3k5l3g2" path="res://teksture/beton/StuccoWall01_2K_Normal.png" id="2_7ubnc"]
+[ext_resource type="Texture2D" uid="uid://b2ant5p6dalc4" path="res://teksture/beton/StuccoWall01_2K_Roughness.png" id="3_k7a0j"]
+
+[resource]
+albedo_texture = ExtResource("1_os36p")
+roughness_texture = ExtResource("3_k7a0j")
+normal_enabled = true
+normal_scale = 0.33
+normal_texture = ExtResource("2_7ubnc")
+uv1_scale = Vector3(0.49, 0.49, 0.49)
+uv1_triplanar = true
+uv1_world_triplanar = true

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://3q6sy1g8d13r"]
+
+[ext_resource type="Script" uid="uid://d10lgkkk4qrpu" path="res://scripts/trokut.gd" id="1_iinti"]
+[ext_resource type="Script" uid="uid://esi56a5abrbu" path="res://scripts/trokut_resurs.gd" id="2_h6mw2"]
+[ext_resource type="Texture2D" uid="uid://dae7o1fsth634" path="res://teksture/teksture_stvari/trokut.jpg" id="2_hfnd3"]
+
+[sub_resource type="Resource" id="Resource_hfnd3"]
+resource_local_to_scene = true
+script = ExtResource("2_h6mw2")
+Name = "Trokut"
+Item_Image = ExtResource("2_hfnd3")
+metadata/_custom_type_script = "uid://esi56a5abrbu"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54yga"]
+shading_mode = 0
+albedo_color = Color(0.00086298434, 0.21600896, 0.7609124, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_54yga"]
+material = SubResource("StandardMaterial3D_54yga")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54yga"]
+size = Vector3(1, 0.7130203, 0.41748047)
+
+[node name="trokut" type="Area3D" unique_id=357338196]
+transform = Transform3D(1, 0, 0, 0, -0.0106812315, 0.99994296, 0, -0.99994296, -0.0106812315, 0, 0, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_iinti")
+podaci_itema = SubResource("Resource_hfnd3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1792677813]
+transform = Transform3D(0.58206224, 0, 0, 0, 0.39808425, 0, 0, 0, 0.16467552, 0, 0, 0)
+mesh = SubResource("PrismMesh_54yga")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=474442299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02943039, 0.013916016)
+shape = SubResource("BoxShape3D_54yga")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1952829680]
+bus = &"efekti_zvuka"

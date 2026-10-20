@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c5p5dnv7t25ma"]
+
+[ext_resource type="Script" uid="uid://b763knij43t7u" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cmjd5cjs5iyfb" path="res://scripts/interakcija.gd" id="2_g2els"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+
+[sub_resource type="GDScript" id="GDScript_3vyb7"]
+script/source = "extends Node3D
+#
+#var rotation_limit = deg_to_rad(75)
+#var mouse_relative := Vector2.ZERO
+#
+#func _ready() -> void:
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+#
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventMouseMotion:
+		#mouse_relative = event.relative
+		#rotation.x -= event.screen_relative.y * 0.01
+		#rotation.x = clampf(rotation.x, -rotation_limit, rotation_limit)
+		#rotation.y += - event.screen_relative.x * 0.01
+"
+
+[node name="player" type="CharacterBody3D" unique_id=1858155381]
+floor_max_angle = 1.0960667
+platform_wall_layers = 1
+script = ExtResource("1_3vyb7")
+mouse_sensitivity = 0.0021
+
+[node name="body" type="MeshInstance3D" parent="." unique_id=1096909390 groups=["player"]]
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="eyes" type="MeshInstance3D" parent="." unique_id=303906450]
+transform = Transform3D(0.3772735, 0, 0, 0, 0.111882016, 0, 0, 0, 0.23146974, 0, 0.5522677, -0.560868)
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1895672571]
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="head" type="Node3D" parent="." unique_id=1894017342]
+transform = Transform3D(1, 0, 0, 0, 0.98056686, 0.19618577, 0, -0.19618577, 0.98056686, 0, 0.8870208, 0)
+script = SubResource("GDScript_3vyb7")
+
+[node name="RayCast3D" type="RayCast3D" parent="head" unique_id=359742349]
+transform = Transform3D(4.6113195, 0, 0, 0, -0.4924232, -6.2559786, 0, 2.3776128, -1.2956648, 0, -0.30342108, -0.44210672)
+collide_with_areas = true
+script = ExtResource("2_g2els")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=375443213]
+transform = Transform3D(1, 0, 0, 0, 0.96148, 5.9604645e-08, 0, -2.9802322e-08, 4.6797414, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head/SpringArm3D" unique_id=97923131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.19773701, 0, 0, 1.0343642)
+
+[node name="flashlight" type="SpotLight3D" parent="." unique_id=1338144151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7104373, -0.738132)
+visible = false
+spot_range = 37.998642
+spot_angle = 27.880072

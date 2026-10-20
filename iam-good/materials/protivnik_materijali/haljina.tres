@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bgoghjpggl1fb"]
+
+[ext_resource type="Texture2D" uid="uid://cotnbtby10gsx" path="res://teksture/protivnik_teksture/ScaryGirlDress_Dress_BaseColor.png" id="1_wo8t3"]
+[ext_resource type="Texture2D" uid="uid://cq42kp5syl3pj" path="res://teksture/protivnik_teksture/ScaryGirlDress_Dress_Metallic.png" id="2_u00dg"]
+[ext_resource type="Texture2D" uid="uid://cin621bwskdda" path="res://teksture/protivnik_teksture/ScaryGirlDress_Dress_Normal.png" id="3_mt7rr"]
+[ext_resource type="Texture2D" uid="uid://xusrd54gufcy" path="res://teksture/protivnik_teksture/ScaryGirlDress_Dress_Roughness.png" id="4_b37bt"]
+
+[resource]
+albedo_texture = ExtResource("1_wo8t3")
+metallic = 1.0
+metallic_texture = ExtResource("2_u00dg")
+roughness_texture = ExtResource("4_b37bt")
+normal_enabled = true
+normal_texture = ExtResource("3_mt7rr")

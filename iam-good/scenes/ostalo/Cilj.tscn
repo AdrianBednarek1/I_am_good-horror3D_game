@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dkicfu1f6m08k"]
+
+[ext_resource type="Script" uid="uid://2ueu1dt6xe2f" path="res://scripts/cilj.gd" id="1_iq67y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5diqo"]
+size = Vector3(3.2, 4.6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5diqo"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_5diqo"]
+material = SubResource("StandardMaterial3D_5diqo")
+
+[node name="Cilj" type="Area3D" unique_id=892760977]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_iq67y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1249370040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1920929e-07, 5.9604645e-08, 0)
+shape = SubResource("BoxShape3D_5diqo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1860828870]
+transform = Transform3D(3.2, 0, 0, 0, 4.5600004, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_5diqo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

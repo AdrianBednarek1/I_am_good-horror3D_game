@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cj3l0xch83g1k"]
+
+[ext_resource type="Script" uid="uid://gflltjcda24c" path="res://scripts/kljuc.gd" id="1_jec0v"]
+[ext_resource type="Texture2D" uid="uid://ct87dvcmd6qwf" path="res://teksture/teksture_stvari/kljuc.png" id="2_eufn8"]
+[ext_resource type="Script" uid="uid://cdcgq2upmi752" path="res://scripts/Kljuc_resurs.gd" id="2_keicr"]
+[ext_resource type="Texture2D" uid="uid://djfhc66dat72q" path="res://teksture/metal_svjetla/BrushedIron01_2K_BaseColor.png" id="4_kulta"]
+[ext_resource type="Texture2D" uid="uid://djommrcmvdton" path="res://teksture/metal_svjetla/BrushedIron01_2K_Metallic.png" id="5_t2rsf"]
+[ext_resource type="Texture2D" uid="uid://bdw6dbs2okxtg" path="res://teksture/metal_svjetla/BrushedIron01_2K_Normal.png" id="6_0coy6"]
+[ext_resource type="Texture2D" uid="uid://dvsoa0iojn04d" path="res://teksture/metal_svjetla/BrushedIron01_2K_Roughness.png" id="7_dhj5d"]
+
+[sub_resource type="Resource" id="Resource_eufn8"]
+resource_local_to_scene = true
+script = ExtResource("2_keicr")
+Name = "Kljuc"
+Item_Image = ExtResource("2_eufn8")
+unique = true
+metadata/_custom_type_script = "uid://cdcgq2upmi752"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhqg3"]
+albedo_color = Color(0.6996531, 0.69965357, 0.69965345, 1)
+albedo_texture = ExtResource("4_kulta")
+metallic = 1.0
+metallic_texture = ExtResource("5_t2rsf")
+roughness = 0.59
+roughness_texture = ExtResource("7_dhj5d")
+normal_enabled = true
+normal_scale = 0.41
+normal_texture = ExtResource("6_0coy6")
+refraction_scale = -0.45
+
+[sub_resource type="BoxMesh" id="BoxMesh_345nk"]
+material = SubResource("StandardMaterial3D_qhqg3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7kvdt"]
+size = Vector3(2.3831787, 1, 1.5487671)
+
+[node name="Kljuc" type="Area3D" unique_id=1498935320]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_jec0v")
+podaci_itema = SubResource("Resource_eufn8")
+
+[node name="okvir" type="Node3D" parent="." unique_id=168116539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8606153, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="okvir" unique_id=1606159161]
+transform = Transform3D(0.878761, 0, 0, 0, 0.09317214, 0, 0, 0, 0.20590658, 0, 0, 0.11619593)
+mesh = SubResource("BoxMesh_345nk")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="okvir" unique_id=1003780146]
+transform = Transform3D(0.4393803, 0, 0, 0, 0.09317209, 0, 0, 0, 0.59301096, 0.6573475, 0, 0.11619593)
+mesh = SubResource("BoxMesh_345nk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="okvir" unique_id=110848876]
+transform = Transform3D(0.07750665, 0, 0, 0, 0.093172066, 0, 0, 0, 0.27454215, -0.29999974, 0, 0.3485878)
+mesh = SubResource("BoxMesh_345nk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="okvir" unique_id=734766368]
+transform = Transform3D(0.07750663, 0, 0, 0, 0.09317205, 0, 0, 0, 0.5216301, -0.09999974, 0, 0.46478373)
+mesh = SubResource("BoxMesh_345nk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1825794313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1627369, 0, 0.15015653)
+shape = SubResource("BoxShape3D_7kvdt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=411698295]
+bus = &"efekti_zvuka"

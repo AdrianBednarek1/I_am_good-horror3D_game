@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuo3r8gkbsrkl"]
+
+[ext_resource type="Script" uid="uid://b2xbo0vfw6dav" path="res://scripts/upravitelj_glazbe_scena.gd" id="1_66q2d"]
+
+[node name="upravitelj_glazbe_scena" type="Node" unique_id=1842522112]
+script = ExtResource("1_66q2d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1837835042]
+bus = &"glazba"

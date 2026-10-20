@@ -1,0 +1,368 @@
+[gd_scene format=3 uid="uid://omk71b0oa6ek"]
+
+[ext_resource type="PackedScene" uid="uid://c5p5dnv7t25ma" path="res://scenes/player.tscn" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://brjsnjtov2r43" path="res://scripts/main.gd" id="1_fpun6"]
+[ext_resource type="Script" uid="uid://b0e314lrhdss0" path="res://scripts/Obavjest_UI.gd" id="1_mx8sn"]
+[ext_resource type="Script" uid="uid://cpscdc4ii03ug" path="res://scripts/Inventar_UI.gd" id="2_klq6b"]
+[ext_resource type="PackedScene" uid="uid://bk7qriwkwyxlj" path="res://scenes/map.tscn" id="2_w7c3h"]
+[ext_resource type="Script" uid="uid://ltcmdvcapf4a" path="res://scripts/Item_pregled_UI.gd" id="3_8c41q"]
+[ext_resource type="PackedScene" uid="uid://bseru2g2x6m2s" path="res://scenes/table.tscn" id="3_w8frs"]
+[ext_resource type="Script" uid="uid://bs2ne6db5bpw6" path="res://scripts/Upravitelj_UI.gd" id="4_64w2a"]
+[ext_resource type="PackedScene" uid="uid://cuy1mf4eqc0yu" path="res://scenes/item.tscn" id="5_ppgk2"]
+[ext_resource type="Texture2D" uid="uid://cxn0ycmjb2o28" path="res://textures/kugla.png" id="6_2r41h"]
+[ext_resource type="Script" uid="uid://c6k783rs64jox" path="res://scripts/Item_resurs.gd" id="8_b121j"]
+[ext_resource type="PackedScene" uid="uid://bjkx8yngxqhtx" path="res://scenes/papir.tscn" id="10_olg7q"]
+[ext_resource type="Texture2D" uid="uid://c07owfmwj6xv" path="res://textures/papir1.png" id="11_64w2a"]
+[ext_resource type="Script" uid="uid://2y2b5c0tst2d" path="res://scripts/Item_papir.gd" id="12_fpun6"]
+
+[sub_resource type="Environment" id="Environment_2q6dc"]
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_8c41q"]
+script = ExtResource("8_b121j")
+Name = "1"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_olg7q"]
+script = ExtResource("8_b121j")
+Name = "2"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_t1rx8"]
+script = ExtResource("8_b121j")
+Name = "3"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_b121j"]
+script = ExtResource("8_b121j")
+Name = "4"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_8iemx"]
+script = ExtResource("8_b121j")
+Name = "5"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_64w2a"]
+script = ExtResource("8_b121j")
+Name = "6"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_fpun6"]
+script = ExtResource("8_b121j")
+Name = "7"
+Item_Image = ExtResource("6_2r41h")
+metadata/_custom_type_script = "uid://c6k783rs64jox"
+
+[sub_resource type="Resource" id="Resource_wc255"]
+script = ExtResource("12_fpun6")
+tekst = "Vidim te. Gdje bježiš?"
+Name = "Papir1"
+Item_Image = ExtResource("11_64w2a")
+metadata/_custom_type_script = "uid://2y2b5c0tst2d"
+
+[node name="main" type="Node3D" unique_id=1299786258]
+script = ExtResource("1_fpun6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1361596051]
+
+[node name="obavjest" type="Control" parent="CanvasLayer" unique_id=1312509679]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_mx8sn")
+
+[node name="Interact" type="RichTextLabel" parent="CanvasLayer/obavjest" unique_id=523846613]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 35.0
+offset_right = 300.0
+offset_bottom = 116.0
+theme_override_font_sizes/normal_font_size = 34
+text = "Pokupi [E]"
+scroll_active = false
+
+[node name="Items_collected" type="RichTextLabel" parent="CanvasLayer/obavjest" unique_id=570514781]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 25.0
+offset_right = 1132.0
+offset_bottom = 106.0
+theme_override_font_sizes/normal_font_size = 34
+text = "0/8"
+scroll_active = false
+
+[node name="inventar" type="Control" parent="CanvasLayer" unique_id=1133368970]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("2_klq6b")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/inventar" unique_id=1842382656]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/inventar/PanelContainer" unique_id=253945795]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/inventar/PanelContainer/MarginContainer" unique_id=896758792]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="item_pregled" type="Control" parent="CanvasLayer" unique_id=1525990377]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_8c41q")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/item_pregled" unique_id=1954159447]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -566.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.52156866)
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/item_pregled/ColorRect" unique_id=731859883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/item_pregled/ColorRect/MarginContainer" unique_id=157057737]
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/item_pregled/ColorRect/MarginContainer/VBoxContainer" unique_id=875665470]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/item_pregled/ColorRect/MarginContainer/VBoxContainer" unique_id=1048796777]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="upravitelj_UI" type="Control" parent="CanvasLayer" unique_id=601995678]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_64w2a")
+
+[node name="player" parent="." unique_id=1858155381 instance=ExtResource("1_2q6dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9336903, 8.762423, -0.03121388)
+mouse_sensitivity = 0.0051
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=622055334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.710472, 0)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1557302789]
+environment = SubResource("Environment_2q6dc")
+
+[node name="house" parent="." unique_id=758350566 instance=ExtResource("2_w7c3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.781438, -2.6249003, 13.388677)
+
+[node name="Lights" type="Node3D" parent="." unique_id=1267346336]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1171866003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2357025, 5.1867414, 19.681898)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=774825841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2357025, 5.663785, 9.040212)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=296537077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.97805, 7.191715, 9.040212)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=1488846837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.974854, 6.4353223, 3.3087797)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=976980851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.325195, 6.286862, 3.3087797)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=140084540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.786526, 4.9717183, 19.724163)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=992446911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5651245, 6.7124143, 22.480122)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=1450412072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.277826, 6.7124143, 22.480122)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=1421936438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.037727, 6.7124143, 0.55906105)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=136932179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4014206, 6.7124143, 9.55546)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=900848437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4014206, 0.7980257, 9.55546)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="Lights" unique_id=1988263321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.929799, 0.83182466, 2.9671984)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="Lights" unique_id=1582456119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.82938, 0.8227104, 2.9770265)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=324447559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.533373, 0.7980257, 26.27262)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=1292816284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.791954, 0.85268474, 13.464281)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="Lights" unique_id=1760810371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.894604, 0.85268474, 16.310122)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="Lights" unique_id=1625224961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.33008, 0.85268474, 8.1305275)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="Lights" unique_id=1192991379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.891113, 0.93871546, 5.49773)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="Lights" unique_id=1223004860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.42898, 0.7465075, 22.412426)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=989201028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.747923, 0.85268474, 14.713027)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="Lights" unique_id=1940525099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.659658, 0.64974886, 13.562535)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1585824028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.172558, 6.7124143, 16.24056)
+shadow_enabled = true
+omni_range = 23.74064
+
+[node name="stvari" type="Node3D" parent="." unique_id=210714909]
+
+[node name="kugle" type="Node3D" parent="stvari" unique_id=1317836627]
+
+[node name="item" parent="stvari/kugle" unique_id=2005903411 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 3.3239017)
+podaci_itema = SubResource("Resource_8c41q")
+
+[node name="item2" parent="stvari/kugle" unique_id=1098926162 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 4.86773)
+podaci_itema = SubResource("Resource_olg7q")
+
+[node name="item3" parent="stvari/kugle" unique_id=422558577 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 6.29267)
+podaci_itema = SubResource("Resource_t1rx8")
+
+[node name="item4" parent="stvari/kugle" unique_id=1521618936 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 7.9808154)
+podaci_itema = SubResource("Resource_b121j")
+
+[node name="item5" parent="stvari/kugle" unique_id=1630074325 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 9.548899)
+podaci_itema = SubResource("Resource_8iemx")
+
+[node name="item6" parent="stvari/kugle" unique_id=1807911034 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.697593, 3.9721313, 14.602451)
+podaci_itema = SubResource("Resource_64w2a")
+
+[node name="item7" parent="stvari/kugle" unique_id=603220662 instance=ExtResource("5_ppgk2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.503977, 3.9721313, 14.602451)
+podaci_itema = SubResource("Resource_fpun6")
+
+[node name="papir" parent="." unique_id=108936457 instance=ExtResource("10_olg7q")]
+transform = Transform3D(-0.012460651, 0, 0.16705191, 0, 0.522973, 0, -0.5399519, 0, -0.003855113, -25.536757, 4.1334586, 9.202537)
+podaci_itema = SubResource("Resource_wc255")
+
+[node name="namjestaji" type="Node3D" parent="." unique_id=1348037062]
+
+[node name="table" parent="namjestaji" unique_id=1998876854 instance=ExtResource("3_w8frs")]
+transform = Transform3D(1.5397959, 0, 0, 0, 1.2079763, 0, 0, 0, 1.59262, -13.047186, 2.418875, 4.5881467)

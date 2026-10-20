@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://tyio1higlyqe"]
+
+[ext_resource type="Script" uid="uid://blv8be00r2buv" path="res://scripts/Sef.gd" id="1_5glbx"]
+[ext_resource type="PackedScene" uid="uid://bpxqcxa8v6bcg" path="res://scenes/interaktivni_objekti/sef/sef_vrata.tscn" id="1_5kqkh"]
+[ext_resource type="Material" uid="uid://bxc21qh1q4ray" path="res://materials/metal/metal_tamni.tres" id="2_1vtm1"]
+[ext_resource type="Script" uid="uid://dhw73757of4ap" path="res://scripts/Kod.gd" id="3_c5abt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l0p5i"]
+material = ExtResource("2_1vtm1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l0p5i"]
+size = Vector3(1.6835327, 2.0407715, 0.053771973)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5kqkh"]
+size = Vector3(1.6765137, 0.050872803, 1.7578735)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5glbx"]
+size = Vector3(1.6794434, 0.057617188, 1.7590332)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c5abt"]
+size = Vector3(0.046051025, 2.000885, 1.7376709)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vtm1"]
+size = Vector3(0.06921387, 1.989624, 1.729248)
+
+[sub_resource type="Animation" id="Animation_5glbx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sef_vrata:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5kqkh"]
+resource_name = "otvori"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sef_vrata:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.0943952, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c5abt"]
+resource_name = "zatvori"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sef_vrata:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 2.0943952, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5glbx"]
+_data = {
+&"RESET": SubResource("Animation_5glbx"),
+&"otvori": SubResource("Animation_5kqkh"),
+&"zatvori": SubResource("Animation_c5abt")
+}
+
+[node name="Sef" type="Node3D" unique_id=1395135218]
+script = ExtResource("1_5glbx")
+
+[node name="okvir" type="Node3D" parent="." unique_id=276074204]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="okvir" unique_id=322056733]
+transform = Transform3D(1.6894264, 0, 0, 0, 1.9984237, 0, 0, 0, 0.062333297, 0, 0, 0)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="okvir" unique_id=101035812]
+transform = Transform3D(-7.3847175e-08, 0, 0.062333297, 0, 1.9984237, 0, -1.6894264, 0, -2.724675e-09, -0.81277204, 0, -0.86911595)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="okvir" unique_id=1510775367]
+transform = Transform3D(-7.3847175e-08, 0, 0.062333297, 0, 1.9984237, 0, -1.6894264, 0, -2.724675e-09, 0.8134364, 0, -0.869116)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="okvir" unique_id=710505265]
+transform = Transform3D(1.6894264, 0, -2.724675e-09, -7.3847175e-08, 3.368564e-15, -0.062333297, 0, 1.7630134, 1.1909933e-16, -0.0003680745, 1.0119412, -0.8486201)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="okvir" unique_id=292514258]
+transform = Transform3D(1.6894264, 0, -2.724675e-09, -7.3847175e-08, 3.368564e-15, -0.062333297, 0, 1.7630134, 1.1909933e-16, -0.00036816127, -0.972949, -0.8486201)
+mesh = SubResource("BoxMesh_l0p5i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=107636350]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1764331424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 0.018188477, 0.0019836426)
+shape = SubResource("BoxShape3D_l0p5i")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=902608495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0028076172, 1.0155792, -0.8497009)
+shape = SubResource("BoxShape3D_5kqkh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=910157538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015869141, -0.97509766, -0.85046387)
+shape = SubResource("BoxShape3D_5glbx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=158249893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821579, 0.010269165, -0.8430786)
+shape = SubResource("BoxShape3D_c5abt")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=419227768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8086548, -0.0037231445, -0.8416748)
+shape = SubResource("BoxShape3D_1vtm1")
+
+[node name="Sef_vrata" parent="." unique_id=502560235 instance=ExtResource("1_5kqkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84292287, 0.017523378, -1.7419101)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1753157616]
+libraries/ = SubResource("AnimationLibrary_5glbx")
+
+[node name="Kod" type="Node" parent="." unique_id=652246354]
+script = ExtResource("3_c5abt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1151014965]
+bus = &"efekti_zvuka"

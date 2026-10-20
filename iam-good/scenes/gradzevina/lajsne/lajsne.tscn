@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://o06jbo2l4k5m"]
+
+[ext_resource type="PackedScene" uid="uid://b4uiv01cdq6qa" path="res://Imports/Lajsne/lajsne.glb" id="1_pv1aa"]
+
+[node name="lajsne" unique_id=1851231576 instance=ExtResource("1_pv1aa")]

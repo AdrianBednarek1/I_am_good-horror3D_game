@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dskbifjc018m7"]
+
+[ext_resource type="Script" uid="uid://d16gcrrmxbv1a" path="res://scripts/Menu.gd" id="1_xdvgc"]
+[ext_resource type="PackedScene" uid="uid://cuo3r8gkbsrkl" path="res://scenes/ostalo/upravitelj_glazbe_scena.tscn" id="2_smgpt"]
+[ext_resource type="AudioStream" uid="uid://uxytvcr5ojj0" path="res://audio/horror3.mp3" id="3_8ecvp"]
+[ext_resource type="PackedScene" uid="uid://cke23iu2w3m4o" path="res://scenes/glavne_scene/postavke_UI.tscn" id="4_pqtwe"]
+
+[node name="Menu" type="Control" unique_id=1308689603]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xdvgc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1012694136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuChildren" type="VBoxContainer" parent="ColorRect" unique_id=1680080879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -126.5
+offset_right = 100.0
+offset_bottom = 126.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 71
+
+[node name="IamGoodLabel" type="Label" parent="ColorRect/MenuChildren" unique_id=336504752]
+layout_mode = 2
+theme_override_font_sizes/font_size = 98
+text = "I am good"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/MenuChildren" unique_id=1759706963]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="ColorRect/MenuChildren/PanelContainer" unique_id=1365692563]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PlayBtn" type="Button" parent="ColorRect/MenuChildren/PanelContainer/ButtonsContainer" unique_id=1626196736]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Play
+"
+
+[node name="SettingsBtn" type="Button" parent="ColorRect/MenuChildren/PanelContainer/ButtonsContainer" unique_id=647767391]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Settings
+"
+
+[node name="QuitBtn" type="Button" parent="ColorRect/MenuChildren/PanelContainer/ButtonsContainer" unique_id=502765704]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Quit
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1360369020]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -104.0
+offset_right = 276.0
+offset_bottom = -45.0
+grow_vertical = 0
+text = "Music: Fran Weisser
+Game: Adrian Bednarek"
+
+[node name="Postavke_UI" parent="ColorRect" unique_id=365549503 instance=ExtResource("4_pqtwe")]
+visible = false
+layout_mode = 1
+
+[node name="upravitelj_glazbe_scena" parent="." unique_id=1842522112 instance=ExtResource("2_smgpt")]
+audio_stream = ExtResource("3_8ecvp")
+
+[connection signal="pressed" from="ColorRect/MenuChildren/PanelContainer/ButtonsContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="ColorRect/MenuChildren/PanelContainer/ButtonsContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="ColorRect/MenuChildren/PanelContainer/ButtonsContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="hidden" from="ColorRect/Postavke_UI" to="." method="_on_postavke_ui_hidden"]

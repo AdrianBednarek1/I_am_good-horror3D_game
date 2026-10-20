@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c5p5dnv7t25ma"]
+
+[ext_resource type="Script" uid="uid://b763knij43t7u" path="res://scripts/Player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cmjd5cjs5iyfb" path="res://scripts/Interakcija_raycast.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bw883j2v1yys7" path="res://scripts/Inventar_node.gd" id="3_qhqgy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+radius = 0.3178711
+height = 1.3894043
+
+[sub_resource type="GDScript" id="GDScript_3vyb7"]
+script/source = "extends Node3D
+#
+#var rotation_limit = deg_to_rad(75)
+#var mouse_relative := Vector2.ZERO
+#
+#func _ready() -> void:
+	#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+#
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event is InputEventMouseMotion:
+		#mouse_relative = event.relative
+		#rotation.x -= event.screen_relative.y * 0.01
+		#rotation.x = clampf(rotation.x, -rotation_limit, rotation_limit)
+		#rotation.y += - event.screen_relative.x * 0.01
+"
+
+[node name="player" type="CharacterBody3D" unique_id=1858155381]
+collision_layer = 2
+collision_mask = 53
+floor_max_angle = 1.3561208
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
+script = ExtResource("1_3vyb7")
+mouse_sensitivity = 0.0031
+
+[node name="body" type="MeshInstance3D" parent="." unique_id=1096909390]
+transform = Transform3D(0.64000005, 0, 0, 0, 0.7, 0, 0, 0, 0.7289999, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="eyes" type="MeshInstance3D" parent="." unique_id=303906450]
+transform = Transform3D(0.24145506, 0, 0, 0, 0.07831741, 0, 0, 0, 0.16874142, 0, 0.31738782, -0.38888466)
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1895672571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013793945, 0)
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="head" type="Node3D" parent="." unique_id=1894017342]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0.5237922, 0.072672546)
+script = SubResource("GDScript_3vyb7")
+
+[node name="flashlight" type="SpotLight3D" parent="head" unique_id=1338144151]
+transform = Transform3D(1, 0, 0, 0, 0.9805666, -0.19618572, 0, 0.19618572, 0.9805666, 0, -0.26309103, -0.60455567)
+spot_range = 37.998642
+spot_angle = 37.11876
+
+[node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=375443213]
+transform = Transform3D(1, 0, 0, 0, 0.96148, 5.9604645e-08, 0, -2.9802322e-08, 4.6797414, 0, -1.9445583e-09, -0.15267318)
+collision_mask = 65535
+spring_length = 0.6
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="head/SpringArm3D" unique_id=97923131]
+transform = Transform3D(1, 0, 0, 0, 1.0271015, -0.16368772, 0, 0.0336306, 0.21102399, 0.01234436, -0.03118831, 0.52975726)
+
+[node name="inventar" type="Node" parent="." unique_id=317940977]
+script = ExtResource("3_qhqgy")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=359742349]
+transform = Transform3D(6.1716595, 0, 0, 0, -7.8191455e-08, -6.1707706, 0, 2.2296588, -1.5794532e-07, 0, 0.34522438, -0.13548315)
+target_position = Vector3(0, -1.2, 0)
+collision_mask = 21
+hit_from_inside = true
+collide_with_areas = true
+debug_shape_thickness = 5
+script = ExtResource("2_g2els")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=786707214]
+current = true

@@ -1,0 +1,17 @@
+# Godot 4 generated cache
+.godot/
+
+# Godot 3 generated cache
+.import/
+
+# Exported game builds
+/build/
+/dist/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary log files
+*.log
